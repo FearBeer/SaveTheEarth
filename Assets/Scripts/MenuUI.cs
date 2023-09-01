@@ -53,13 +53,11 @@ public class MenuUI : MonoBehaviour
 
     public void GameExit()
     {
-        if(Application.isEditor)
-        {
-            EditorApplication.ExitPlaymode();
-        } else
-        {
-            Application.Quit();
-        }
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+        Application.Quit();
+#endif
     }
 
     public void BackToMenu()

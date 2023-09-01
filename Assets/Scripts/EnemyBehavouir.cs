@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyBehavouir : MonoBehaviour
 {
     [SerializeField] public float enemySpeed = 10;
-    [SerializeField] private float repulsionPower = 1.2f;
     [SerializeField] private float timer = 2;
     private Rigidbody2D rigidBody;
     private PlayerController playerController;
