@@ -8,7 +8,8 @@ public class DataManger : MonoBehaviour
     public static DataManger Instance;
     public int palyerHealth;
     public int earthHealth;
-    public int score;
+    public float reloadTime;
+    public int money;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class DataManger : MonoBehaviour
     {
         public int palyerHealth;
         public int earthHealth;
-        public int score;
+        public float reloadTime;
+        public int money;
     }
 }

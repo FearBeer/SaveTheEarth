@@ -12,8 +12,10 @@ public class PlayerController : MonoBehaviour
     private EnemySpawner spawner;
     private Rigidbody2D rigidBody;
     private float horizontalInput;
-    public int earthHealth = 1;
+    private float canFire = 0f;
     public float playerHealth = 3;
+    public int earthHealth = 1;
+    public float rechargeTime = 2.0f;
     public bool isGameActive;
 
     public int destroyedEneemies = 0;
@@ -35,8 +37,8 @@ public class PlayerController : MonoBehaviour
         {
             nextLevelButton.gameObject.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && isGameActive) {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        if (Input.GetKeyDown(KeyCode.Space) && isGameActive && Time.time > canFire) {
+            FireProjectile();
         }
     }
 
@@ -57,6 +59,12 @@ public class PlayerController : MonoBehaviour
         {
             rigidBody.AddForce(new Vector2(0,0));
         }
+    }
+
+    private void FireProjectile()
+    {
+        canFire = Time.time + rechargeTime;
+        Instantiate(projectilePrefab, transform.position, Quaternion.identity);
     }
 
     public void GameOver()

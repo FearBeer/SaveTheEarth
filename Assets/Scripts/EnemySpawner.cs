@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
-    private float spawPositionX = 78;
+    private float spawPositionLeft = -78;
+    private float spawPositionRight = 46;
     [SerializeField] private float spawnInterval = 1;
     public int enemyCount = 20;
 
@@ -37,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
     private void RandomEnemySpawn()
     {
         int index = Random.Range(0, enemyPrefabs.Length);
-        Vector2 spawnPosition = new Vector2(Random.Range(-spawPositionX, spawPositionX), 7);
+        Vector2 spawnPosition = new Vector2(Random.Range(spawPositionLeft, spawPositionRight), 7);
         Instantiate(enemyPrefabs[index], spawnPosition, enemyPrefabs[index].transform.rotation);
     }
 }

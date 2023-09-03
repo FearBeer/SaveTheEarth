@@ -42,6 +42,10 @@ public class EnemyBehavouir : MonoBehaviour
         {
             enemySpeed = -enemySpeed;
             playerController.playerHealth--;
+            if(playerController.playerHealth < 0)
+            {
+                playerController.playerHealth = 0;
+            }
         }
 
         if (collision.gameObject.tag == "Enemy" && gameObject.tag == "Enemy")
@@ -52,6 +56,10 @@ public class EnemyBehavouir : MonoBehaviour
         if (gameObject.tag == "Enemy" && collision.gameObject.tag == "Earth")
         {
             playerController.earthHealth--;
+            if (playerController.earthHealth < 0)
+            {
+                playerController.earthHealth = 0;
+            }
             playerController.destroyedEneemies++;
             Destroy(gameObject);
         }

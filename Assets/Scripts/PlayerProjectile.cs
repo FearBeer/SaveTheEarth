@@ -32,6 +32,7 @@ public class PlayerProjectile : MonoBehaviour
             Destroy(gameObject);
             Destroy(collision.gameObject);
             playerController.destroyedEneemies++;
+            DataManger.Instance.money += 10;
         }
         if (collision.gameObject.tag == "Boundary")
         {
