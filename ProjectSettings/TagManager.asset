@@ -9,6 +9,8 @@ TagManager:
   - PlayerProjectile
   - Boundary
   - Earth
+  - LeftBound
+  - RightBound
   layers:
   - Default
   - TransparentFX

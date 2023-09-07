@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBehavouir : MonoBehaviour
 {
-    [SerializeField] public float enemySpeed = 10;
+    [SerializeField] public float enemySpeed = 1400;
     [SerializeField] private float timer = 2;
     private Rigidbody2D rigidBody;
     private PlayerController playerController;
@@ -40,9 +40,10 @@ public class EnemyBehavouir : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            enemySpeed = -enemySpeed;
+            enemySpeed = -enemySpeed/2;
+            Movement();
             playerController.playerHealth--;
-            if(playerController.playerHealth < 0)
+            if(playerController.playerHealth < 1)
             {
                 playerController.playerHealth = 0;
             }
@@ -50,7 +51,8 @@ public class EnemyBehavouir : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy" && gameObject.tag == "Enemy")
         {
-            enemySpeed = -enemySpeed;
+            enemySpeed = -enemySpeed/1.5f;
+            Movement();
         }
 
         if (gameObject.tag == "Enemy" && collision.gameObject.tag == "Earth")

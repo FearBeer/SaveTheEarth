@@ -33,11 +33,13 @@ public class PlayerController : MonoBehaviour
         if (playerHealth <= 0 || earthHealth <= 0)
         {
             GameOver();
-        } else if(isGameActive && destroyedEneemies == spawner.enemyCount)
+        }
+        else if (isGameActive && destroyedEneemies == spawner.enemyCount)
         {
             nextLevelButton.gameObject.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && isGameActive && Time.time > canFire) {
+        if (Input.GetKeyDown(KeyCode.Space) && isGameActive && Time.time > canFire)
+        {
             FireProjectile();
         }
     }
@@ -49,15 +51,16 @@ public class PlayerController : MonoBehaviour
     }
     private void Movement()
     {
-        if(isGameActive)
+        if (isGameActive)
         {
             horizontalInput = Input.GetAxis("Horizontal");
             rigidBody.velocity = Vector2.zero;
             Vector2 movement = new Vector2(horizontalInput, 0);
             rigidBody.AddForce(movement * playerSpeed);
-        } else
+        }
+        else
         {
-            rigidBody.AddForce(new Vector2(0,0));
+            rigidBody.AddForce(new Vector2(0, 0));
         }
     }
 

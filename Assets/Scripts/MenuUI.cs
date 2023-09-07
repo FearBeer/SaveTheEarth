@@ -20,17 +20,17 @@ public class MenuUI : MonoBehaviour
 
     public void GameStart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
     }
 
     public void GameShop()
     {
-        Debug.Log("Coming soon... gameShop");
+        SceneManager.LoadScene(2);
     }
 
     public void GameSettings()
     {
-        Debug.Log("Coming soon... gameSettings");
+        SceneManager.LoadScene(1);
     }
 
     public void NextLevel()
@@ -49,15 +49,6 @@ public class MenuUI : MonoBehaviour
     public void TryAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void GameExit()
-    {
-#if UNITY_EDITOR
-        EditorApplication.ExitPlaymode();
-#else
-        Application.Quit();
-#endif
     }
 
     public void BackToMenu()

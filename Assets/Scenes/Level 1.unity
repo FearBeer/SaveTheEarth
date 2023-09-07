@@ -663,7 +663,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   palyerHealth: 0
   earthHealth: 0
-  score: 0
+  reloadTime: 0
+  money: 0
 --- !u!4 &571040430
 Transform:
   m_ObjectHideFlags: 0
@@ -825,7 +826,7 @@ GameObject:
   - component: {fileID: 900863237}
   m_Layer: 0
   m_Name: RightBoundary
-  m_TagString: Untagged
+  m_TagString: RightBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -854,7 +855,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 900863235}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f3c16bd35d4dd694c8f0f4d38f2bdef1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1172,12 +1173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 7164183184056539089, guid: 9eca9832acd9a164c8721260a033c195, type: 3}
-  - {fileID: 7164183184056539089, guid: 9eca9832acd9a164c8721260a033c195, type: 3}
-  - {fileID: 4186201137771063409, guid: e95a03d876b916f47bcde19ce792feed, type: 3}
-  - {fileID: 7164183184056539089, guid: 9eca9832acd9a164c8721260a033c195, type: 3}
-  - {fileID: 7164183184056539089, guid: 9eca9832acd9a164c8721260a033c195, type: 3}
   spawnInterval: 2
-  enemyCount: 4
+  enemyCount: 10
 --- !u!4 &1087402203
 Transform:
   m_ObjectHideFlags: 0
@@ -1679,7 +1676,7 @@ GameObject:
   - component: {fileID: 1402191894}
   m_Layer: 0
   m_Name: LeftBoundary
-  m_TagString: Untagged
+  m_TagString: LeftBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1708,7 +1705,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1402191892}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f3c16bd35d4dd694c8f0f4d38f2bdef1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2682,6 +2679,10 @@ PrefabInstance:
     - target: {fileID: 6266021268629847110, guid: 19503894303b25942b482c7ffdb25f68, type: 3}
       propertyPath: earthHealth
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266021268629847110, guid: 19503894303b25942b482c7ffdb25f68, type: 3}
+      propertyPath: playerHealth
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6266021268629847110, guid: 19503894303b25942b482c7ffdb25f68, type: 3}
       propertyPath: rechargeTime
