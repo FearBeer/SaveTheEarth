@@ -7,23 +7,22 @@ using TMPro;
 public class MenuInfo : MonoBehaviour
 {
     private PlayerController playerController;
-    private TextMeshProUGUI levelText;
+   // private TextMeshProUGUI levelText;
     private TextMeshProUGUI playerLifes;
     private TextMeshProUGUI earthLifes;
     private TextMeshProUGUI reload;
     private TextMeshProUGUI money;
+    private TextMeshProUGUI speed;
     // Start is called before the first frame update
     void Start()
     {
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-        levelText = GameObject.Find("Level").GetComponent<TextMeshProUGUI>();
-        playerLifes = GameObject.Find("Lifes").GetComponent <TextMeshProUGUI>();
+        //levelText = GameObject.Find("Level").GetComponent<TextMeshProUGUI>();
+        playerLifes = GameObject.Find("Lifes").GetComponent<TextMeshProUGUI>();
         earthLifes = GameObject.Find("EarthLifes").GetComponent<TextMeshProUGUI>();
         reload = GameObject.Find("Reload").GetComponent<TextMeshProUGUI>();
         money = GameObject.Find("Money").GetComponent<TextMeshProUGUI>();
-
-        levelText.text = SceneManager.GetActiveScene().name.ToUpper();
-        
+        speed = GameObject.Find("PlayerSpeed").GetComponent<TextMeshProUGUI>();        
     }
 
     // Update is called once per frame
@@ -31,7 +30,8 @@ public class MenuInfo : MonoBehaviour
     {
         playerLifes.text = $"Lifes: {playerController.playerHealth}";
         earthLifes.text = $"Earth lifes: {playerController.earthHealth}";
-        reload.text = $"Reload time: {playerController.rechargeTime}s";
+        reload.text = $"Reload: {playerController.timeToFire.ToString("0.0")}s";
         money.text = $"Money: {DataManger.Instance.money}";
+        speed.text = $"Speed: {DataManger.Instance.playerSpeed}";
     }
 }

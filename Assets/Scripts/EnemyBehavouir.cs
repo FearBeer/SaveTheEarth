@@ -6,6 +6,9 @@ public class EnemyBehavouir : MonoBehaviour
 {
     [SerializeField] public float enemySpeed = 1400;
     [SerializeField] private float timer = 2;
+
+    public int enemyCost = 10;
+    public int enemyHealth = 1;
     private Rigidbody2D rigidBody;
     private PlayerController playerController;
 

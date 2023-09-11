@@ -6,16 +6,16 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 10;
+    private float playerSpeed;
     [SerializeField] private Button nextLevelButton;
     [SerializeField] private Button tryAgainButton;
     private EnemySpawner spawner;
     private Rigidbody2D rigidBody;
     private float horizontalInput;
-    private float canFire = 0f;
-    public float playerHealth = 3;
-    public int earthHealth = 1;
-    public float rechargeTime = 2.0f;
+    public float timeToFire = 0f;
+    public float playerHealth;
+    public int earthHealth;
+    private float reloadTime;
     public bool isGameActive;
 
     public int destroyedEneemies = 0;
@@ -24,12 +24,16 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isGameActive = true;
+        playerHealth = DataManger.Instance.playerHealth;
+        earthHealth = DataManger.Instance.earthHealth;
+        reloadTime = DataManger.Instance.reloadTime;
+        playerSpeed = DataManger.Instance.playerSpeed;
         rigidBody = GetComponent<Rigidbody2D>();
         spawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
     }
-
     void Update()
     {
+        Movement();
         if (playerHealth <= 0 || earthHealth <= 0)
         {
             GameOver();
@@ -38,35 +42,43 @@ public class PlayerController : MonoBehaviour
         {
             nextLevelButton.gameObject.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && isGameActive && Time.time > canFire)
+        if (Input.GetKeyDown(KeyCode.Space) && isGameActive && timeToFire == 0)
         {
+            timeToFire = reloadTime;
             FireProjectile();
+            StartCoroutine(TimerRoutine());
         }
+
     }
 
-    void FixedUpdate()
+    IEnumerator TimerRoutine()
     {
-        Movement();
-
+        while(timeToFire > 0)
+        {
+            yield return new WaitForSeconds(0);
+            timeToFire -= Time.deltaTime;
+            if (timeToFire < 0)
+            {
+                timeToFire = 0;
+            }
+        }
     }
     private void Movement()
     {
         if (isGameActive)
         {
             horizontalInput = Input.GetAxis("Horizontal");
-            rigidBody.velocity = Vector2.zero;
             Vector2 movement = new Vector2(horizontalInput, 0);
-            rigidBody.AddForce(movement * playerSpeed);
+            rigidBody.velocity = movement * playerSpeed;
         }
         else
         {
-            rigidBody.AddForce(new Vector2(0, 0));
+            rigidBody.velocity = Vector2.zero;
         }
     }
 
     private void FireProjectile()
     {
-        canFire = Time.time + rechargeTime;
         Instantiate(projectilePrefab, transform.position, Quaternion.identity);
     }
 

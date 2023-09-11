@@ -99,7 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f768789d9d7e11448fc7d704368ae00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 60000
+  playerSpeed: 10
+  nextLevelButton: {fileID: 0}
+  tryAgainButton: {fileID: 0}
+  playerHealth: 3
+  earthHealth: 1
+  rechargeTime: 2
+  isGameActive: 0
+  destroyedEneemies: 0
   projectilePrefab: {fileID: 9118852987672566801, guid: 3bf1d7774369dbb48935bae0c778c3be, type: 3}
 --- !u!50 &6266021268629847115
 Rigidbody2D:

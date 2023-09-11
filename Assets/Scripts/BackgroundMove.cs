@@ -25,6 +25,6 @@ public class BackgroundMove : MonoBehaviour
     {
         backgroundPosition -= speed * Time.deltaTime;
         backgroundPosition = Mathf.Repeat(backgroundPosition, backgroundSize);
-        backgroundTransform.position = new Vector3(0, backgroundPosition, 0);
+        backgroundTransform.position = new Vector2(0, backgroundPosition);
     }
 }
