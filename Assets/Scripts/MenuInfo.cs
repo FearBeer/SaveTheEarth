@@ -1,37 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MenuInfo : MonoBehaviour
 {
-    private PlayerController playerController;
-   // private TextMeshProUGUI levelText;
-    private TextMeshProUGUI playerLifes;
-    private TextMeshProUGUI earthLifes;
-    private TextMeshProUGUI reload;
-    private TextMeshProUGUI money;
-    private TextMeshProUGUI speed;
-    // Start is called before the first frame update
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private MoneyBank moneyBank;
+    [SerializeField] private TextMeshProUGUI playerLifes;
+    [SerializeField] private TextMeshProUGUI earthLifes;
+    [SerializeField] private TextMeshProUGUI reload;
+    [SerializeField] private TextMeshProUGUI currentMoney;
+    [SerializeField] private TextMeshProUGUI speed;
+    [SerializeField] private TextMeshProUGUI damage;
     void Start()
-    {
-        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-        //levelText = GameObject.Find("Level").GetComponent<TextMeshProUGUI>();
-        playerLifes = GameObject.Find("Lifes").GetComponent<TextMeshProUGUI>();
-        earthLifes = GameObject.Find("EarthLifes").GetComponent<TextMeshProUGUI>();
-        reload = GameObject.Find("Reload").GetComponent<TextMeshProUGUI>();
-        money = GameObject.Find("Money").GetComponent<TextMeshProUGUI>();
-        speed = GameObject.Find("PlayerSpeed").GetComponent<TextMeshProUGUI>();        
-    }
+    {  
+        playerLifes.text = $"Lifes: {DataManger.Instance.playerHealth}";
+        playerController.OnPlayerHealthChange.AddListener((health) =>
+        {
+            playerLifes.text = $"Lifes: {playerController.GetPlayerHealth()}";
+        });
 
-    // Update is called once per frame
-    void Update()
-    {
-        playerLifes.text = $"Lifes: {playerController.playerHealth}";
-        earthLifes.text = $"Earth lifes: {playerController.earthHealth}";
-        reload.text = $"Reload: {playerController.timeToFire.ToString("0.0")}s";
-        money.text = $"Money: {DataManger.Instance.money}";
+        earthLifes.text = $"Earth Lifes: {DataManger.Instance.earthHealth}";
+        playerController.OnEarthHealthChange.AddListener((health) =>
+        {
+            earthLifes.text = $"Earth lifes: {playerController.GetEarthHealth()}";
+        });
+
+        reload.text = $"Reload: {DataManger.Instance.reloadTime.ToString("0.0")}s";
+        playerController.OnTimeToFireCnahge.AddListener((time) =>
+        {
+            reload.text = $"Reload: {playerController.GetTimeToFire().ToString("0.0")}s";
+        });
+
+        currentMoney.text = $"Money: {DataManger.Instance.money}";
+        moneyBank.OnMoneyChange.AddListener((money) =>
+        {
+            currentMoney.text = $"Money: {moneyBank.GetAllMoneyValue()}";
+        });
+
         speed.text = $"Speed: {DataManger.Instance.playerSpeed}";
+        damage.text = $"Damage: {DataManger.Instance.projectileDamage}";
     }
 }

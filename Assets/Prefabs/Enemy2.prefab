@@ -100,9 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f2d14e4243efa4982d73dc8eb5758f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 2200
+  enemySpeed: 13
   timer: 1
-  enemyCost: 20
+  damage: 2
+  limitRangeSpeed: 2
+  enemyCost: 75
   enemyHealth: 2
 --- !u!50 &5066230448185082312
 Rigidbody2D:

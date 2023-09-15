@@ -2,23 +2,30 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private float playerSpeed;
     [SerializeField] private Button nextLevelButton;
     [SerializeField] private Button tryAgainButton;
+    [SerializeField] private AudioClip fireSound;
     private EnemySpawner spawner;
     private Rigidbody2D rigidBody;
+    private AudioSource audioSource;
+    private float playerSpeed;
     private float horizontalInput;
-    public float timeToFire = 0f;
-    public float playerHealth;
-    public int earthHealth;
     private float reloadTime;
+    private float timeToFire = 0f;
+    private int playerHealth;
+    private int earthHealth;
+    
     public bool isGameActive;
-
     public int destroyedEneemies = 0;
+
+    public UnityEvent<int> OnPlayerHealthChange;
+    public UnityEvent<int> OnEarthHealthChange;
+    public UnityEvent<float> OnTimeToFireCnahge;
 
     public GameObject projectilePrefab;
     void Start()
@@ -29,16 +36,30 @@ public class PlayerController : MonoBehaviour
         reloadTime = DataManger.Instance.reloadTime;
         playerSpeed = DataManger.Instance.playerSpeed;
         rigidBody = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         spawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
     }
+
+    public int GetPlayerHealth()
+    {
+        return playerHealth;
+    }
+
+    public int GetEarthHealth()
+    {
+        return earthHealth;
+    }
+
+    public float GetTimeToFire()
+    {
+        return timeToFire;
+    }
+
     void Update()
     {
         Movement();
-        if (playerHealth <= 0 || earthHealth <= 0)
-        {
-            GameOver();
-        }
-        else if (isGameActive && destroyedEneemies == spawner.enemyCount)
+
+        if (isGameActive && destroyedEneemies == spawner.enemyCount)
         {
             nextLevelButton.gameObject.SetActive(true);
         }
@@ -46,9 +67,9 @@ public class PlayerController : MonoBehaviour
         {
             timeToFire = reloadTime;
             FireProjectile();
+            audioSource.PlayOneShot(fireSound, 1.0f);
             StartCoroutine(TimerRoutine());
         }
-
     }
 
     IEnumerator TimerRoutine()
@@ -61,6 +82,7 @@ public class PlayerController : MonoBehaviour
             {
                 timeToFire = 0;
             }
+            OnTimeToFireCnahge.Invoke(timeToFire);
         }
     }
     private void Movement()
@@ -80,6 +102,28 @@ public class PlayerController : MonoBehaviour
     private void FireProjectile()
     {
         Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+    }
+
+    public void TakePlayerDamage(int damage)
+    {
+        playerHealth -= damage;
+        if (playerHealth <= 0)
+        {
+            playerHealth = 0;
+            GameOver();
+        }
+        OnPlayerHealthChange.Invoke(playerHealth);
+    }
+
+    public void TakeEarthDamage(int damage)
+    {
+        earthHealth -= damage;
+        if (earthHealth <= 0)
+        {
+            earthHealth = 0;
+            GameOver();
+        }
+        OnEarthHealthChange.Invoke(earthHealth);
     }
 
     public void GameOver()
