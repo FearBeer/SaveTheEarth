@@ -20,9 +20,11 @@ public class BuyTicketToPlanet : MonoBehaviour
     private int notLevelScenCount = 3;
     private AudioSource audioSource;
     private TextMeshProUGUI money;
+    private DataManger dataManger;
     void Start()
     {
         money = GameObject.Find("Money").GetComponent<TextMeshProUGUI>();
+        dataManger = GameObject.Find("DataManager").GetComponent<DataManger>();
         audioSource = GetComponent<AudioSource>();
 
         money.text = $"Money: {moneyBank.GetAllMoneyValue()}";
@@ -35,6 +37,7 @@ public class BuyTicketToPlanet : MonoBehaviour
             isMoneyEnough = true;
             DataManger.Instance.money -= cost;
             money.text = $"Money: {DataManger.Instance.money}";
+            dataManger.Save();
             LevelStart(id);
         }
         else

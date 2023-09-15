@@ -7,12 +7,14 @@ public class EnemyBehavouir : MonoBehaviour
     [SerializeField] private float enemySpeed = 100;
     [SerializeField] private float timer = 2;
     [SerializeField] private int damage = 1;
-    [SerializeField]private int limitRangeSpeed = 2;
+    [SerializeField] private int limitRangeSpeed = 2;
+    [SerializeField] private GameObject destroyParticle;
 
     private Rigidbody2D rigidBody;
     private PlayerController playerController;
     private MoneyBank moneyBank;
     private SoundsPlay sounds;
+    private DataManger dataManger;
     
     public int enemyCost = 10;
     public int enemyHealth = 1;
@@ -23,6 +25,7 @@ public class EnemyBehavouir : MonoBehaviour
     {
         sounds = GameObject.Find("Sounds").GetComponent<SoundsPlay>();
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        dataManger = GameObject.Find("DataManager").GetComponent<DataManger>();
         moneyBank = GameObject.Find("MoneyBank").GetComponent<MoneyBank>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
@@ -101,6 +104,8 @@ public class EnemyBehavouir : MonoBehaviour
             {
                 sounds.DestroyEnemySound();
                 moneyBank.ChangeMoneyValue(enemyCost);
+                dataManger.Save();
+                Instantiate(destroyParticle, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 playerController.destroyedEneemies++;
             }

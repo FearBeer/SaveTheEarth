@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class DataManger : MonoBehaviour
 {
@@ -16,8 +17,6 @@ public class DataManger : MonoBehaviour
     public int projectileDamageCost;
     public float playerSpeed;
     public int playerSpeedCost;
-    public int missionNumber;
-    public int missionCost;
     public int money;
 
     private void Awake()
@@ -30,19 +29,7 @@ public class DataManger : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            Instance.playerHealth = 1;
-            Instance.playerHealthCost = 10;
-            Instance.earthHealth = 1;
-            Instance.earthHealthCost = 20;
-            Instance.money = 0;
-            Instance.reloadTime = 2.0f;
-            Instance.reloadTimeCost = 30;
-            Instance.playerSpeed = 50.0f;
-            Instance.playerSpeedCost = 50;
-            Instance.projectileDamage = 1;
-            Instance.projectileDamageCost = 500;
-            Instance.missionNumber = 1;
-            Instance.missionCost = 1000;
+            Load();
         }
     }
 
@@ -58,8 +45,47 @@ public class DataManger : MonoBehaviour
         public int playerSpeedCost;
         public int projectileDamage;
         public int projectileDamageCost;
-        public int missionNumber;
-        public int missionCost;
         public int money;
+    }
+
+    public void Save()
+    {
+        SaveData data = new SaveData();
+        data.playerHealth = playerHealth;
+        data.playerHealthCost = playerHealthCost;
+        data.earthHealth = earthHealth;
+        data.earthHealthCost = earthHealthCost;
+        data.reloadTime = reloadTime;
+        data.reloadTimeCost = reloadTimeCost;
+        data.playerSpeed = playerSpeed;
+        data.playerSpeedCost = playerSpeedCost;
+        data.projectileDamage = projectileDamage;
+        data.projectileDamageCost = projectileDamageCost;
+        data.money = money;
+
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
+    public void Load()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            playerHealth = data.playerHealth;
+            playerHealthCost = data.playerHealthCost;
+            earthHealth = data.earthHealth;
+            earthHealthCost = data.earthHealthCost;
+            reloadTime = data.reloadTime;
+            reloadTimeCost = data.reloadTimeCost;
+            playerSpeed = data.playerSpeed;
+            playerSpeedCost = data.playerSpeedCost;
+            projectileDamage = data.projectileDamage;
+            projectileDamageCost = data.projectileDamageCost;
+            money = data.money;
+        }
     }
 }

@@ -14,10 +14,13 @@ public class Upgrade : MonoBehaviour
     private bool isUpgardeComplete;
     private AudioSource audioSource;
     public Action<int> valueChange;
+
+    private DataManger dataManger; 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        dataManger = GameObject.Find("DataManager").GetComponent<DataManger>();
     }
     private void UpgradeProduct(int cost, Action<int> action)
     {
@@ -26,6 +29,7 @@ public class Upgrade : MonoBehaviour
             isUpgardeComplete = true;
             DataManger.Instance.money -= cost;
             action?.Invoke(cost);
+            dataManger.Save();
         }
         else
         {

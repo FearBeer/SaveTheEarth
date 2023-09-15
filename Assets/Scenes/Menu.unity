@@ -152,18 +152,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ae22bb26229514fa2fe2ea7d221fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 0
-  playerHealthCost: 0
-  earthHealth: 0
-  earthHealthCost: 0
-  reloadTime: 0.5
-  reloadTimeCost: 0
-  projectileDamage: 0
-  projectileDamageCost: 0
-  playerSpeed: 0
-  playerSpeedCost: 0
-  missionNumber: 0
-  missionCost: 0
+  playerHealth: 1
+  playerHealthCost: 10
+  earthHealth: 1
+  earthHealthCost: 20
+  reloadTime: 2
+  reloadTimeCost: 30
+  projectileDamage: 1
+  projectileDamageCost: 500
+  playerSpeed: 50
+  playerSpeedCost: 50
   money: 0
 --- !u!4 &109272790
 Transform:
