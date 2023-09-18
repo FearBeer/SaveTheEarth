@@ -26,18 +26,18 @@ public class MenuUI : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void NextLevel()
-    {
-        int allScenceCount = SceneManager.sceneCountInBuildSettings;
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if(currentSceneIndex < allScenceCount - 1)
-        {
-            SceneManager.LoadScene(currentSceneIndex + 1);
-        } else
-        {
-            Debug.Log("Coming soon... NextLevel");
-        }
-    }
+   // public void NextLevel()
+   // {
+        //int allScenceCount = SceneManager.sceneCountInBuildSettings;
+        //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //if(currentSceneIndex < allScenceCount - 1)
+        //{
+        //    SceneManager.LoadScene(currentSceneIndex + 1);
+        //} else
+        //{
+        //    Debug.Log("Coming soon... NextLevel");
+        //}
+   // }
 
     public void TryAgain()
     {

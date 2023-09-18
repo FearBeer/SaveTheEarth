@@ -163,6 +163,7 @@ MonoBehaviour:
   playerSpeed: 50
   playerSpeedCost: 50
   money: 0
+  moneyRate: 1
 --- !u!4 &109272790
 Transform:
   m_ObjectHideFlags: 0
@@ -1150,7 +1151,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 118917142}
         m_TargetAssemblyTypeName: MenuUI, Assembly-CSharp
-        m_MethodName: GameShop
+        m_MethodName: GameSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

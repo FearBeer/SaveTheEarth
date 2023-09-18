@@ -15,10 +15,10 @@ public class EnemyBehavouir : MonoBehaviour
     private MoneyBank moneyBank;
     private SoundsPlay sounds;
     private DataManger dataManger;
+    private float timeToChangeSpeed;
     
     public int enemyCost = 10;
     public int enemyHealth = 1;
-    private float timeToChangeSpeed;
 
 
     void Start()
@@ -103,7 +103,7 @@ public class EnemyBehavouir : MonoBehaviour
             if (enemyHealth < 1)
             {
                 sounds.DestroyEnemySound();
-                moneyBank.ChangeMoneyValue(enemyCost);
+                moneyBank.ChangeMoneyValue(Mathf.CeilToInt(enemyCost * DataManger.Instance.moneyRate));
                 dataManger.Save();
                 Instantiate(destroyParticle, transform.position, Quaternion.identity);
                 Destroy(gameObject);

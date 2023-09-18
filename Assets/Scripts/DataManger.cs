@@ -18,6 +18,7 @@ public class DataManger : MonoBehaviour
     public float playerSpeed;
     public int playerSpeedCost;
     public int money;
+    public float moneyRate;
 
     private void Awake()
     {

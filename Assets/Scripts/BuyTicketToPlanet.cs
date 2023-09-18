@@ -1,20 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
-using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
 public class BuyTicketToPlanet : MonoBehaviour
 {
-    [SerializeField] GameObject moreMoney;
-    [SerializeField] MoneyBank moneyBank;
-    [SerializeField] TextMeshProUGUI flyToPlanet;
-    [SerializeField] private int cost;
-    [SerializeField] private int id;
+    [SerializeField] private GameObject moreMoney;
+    [SerializeField] private MoneyBank moneyBank;
+    [SerializeField] private TextMeshProUGUI flyToPlanet;
     [SerializeField] private AudioClip upgradeComplete;
     [SerializeField] private AudioClip upgradeFail;
+    [SerializeField] private float moneyRate;
+    [SerializeField] private int cost;
+    [SerializeField] private int id;
 
     private bool isMoneyEnough;
     private int notLevelScenCount = 3;
@@ -37,6 +35,7 @@ public class BuyTicketToPlanet : MonoBehaviour
             isMoneyEnough = true;
             DataManger.Instance.money -= cost;
             money.text = $"Money: {DataManger.Instance.money}";
+            DataManger.Instance.moneyRate = moneyRate;
             dataManger.Save();
             LevelStart(id);
         }
