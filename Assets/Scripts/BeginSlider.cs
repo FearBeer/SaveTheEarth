@@ -37,6 +37,7 @@ public class BeginSlider : MonoBehaviour
             if (index > 0)
             {
                 backButton.SetActive(true);
+                nextButton.SetActive(true);
             }
             if (index == slides.Length - 1)
             {

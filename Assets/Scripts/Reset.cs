@@ -34,6 +34,13 @@ public class Reset : MonoBehaviour
         DataManger.Instance.money = 0;
         DataManger.Instance.moneyRate = 1;
 
+        DataManger.Instance.isMaxDamage = false;
+        DataManger.Instance.isMaxEartHP = false;
+        DataManger.Instance.isMaxFuel = false;
+        DataManger.Instance.isMaxPlayerHP = false;
+        DataManger.Instance.isMaxSpeed = false;
+        DataManger.Instance.isMinReloadTime = false;
+
         dataManger.Save();
 
         SceneManager.LoadScene(0);
