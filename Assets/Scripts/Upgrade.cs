@@ -107,6 +107,20 @@ public class Upgrade : MonoBehaviour
         UpgradeProduct(DataManger.Instance.projectileDamageCost, changeProjectileDamage);
     }
 
+    public void changeFuelCapacity(int cost)
+    {
+        cost = DataManger.Instance.fuelCapacityCost;
+        DataManger.Instance.fuelCapacity *= 2;
+        cost *= 2;
+        DataManger.Instance.fuelCapacityCost = cost;
+        textMeshPro.text = $"{product}:\n\n{cost}";
+    }
+
+    public void UpgradeFuelCapacity()
+    {
+        UpgradeProduct(DataManger.Instance.fuelCapacityCost, changeFuelCapacity);
+    }
+
     IEnumerator timerRoutine()
     {
         moreMoney.SetActive(true);

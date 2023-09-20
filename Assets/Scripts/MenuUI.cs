@@ -13,17 +13,17 @@ public class MenuUI : MonoBehaviour
 
     public void GameStart()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     public void GameShop()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void GameSettings()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
    // public void NextLevel()
@@ -46,6 +46,6 @@ public class MenuUI : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

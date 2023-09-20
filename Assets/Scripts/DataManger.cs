@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
@@ -19,6 +17,8 @@ public class DataManger : MonoBehaviour
     public int playerSpeedCost;
     public int money;
     public float moneyRate;
+    public int fuelCapacity;
+    public int fuelCapacityCost;
 
     private void Awake()
     {
@@ -47,6 +47,8 @@ public class DataManger : MonoBehaviour
         public int projectileDamage;
         public int projectileDamageCost;
         public int money;
+        public int fuelCapacity;
+        public int fuelCapacityCost;
     }
 
     public void Save()
@@ -63,6 +65,8 @@ public class DataManger : MonoBehaviour
         data.projectileDamage = projectileDamage;
         data.projectileDamageCost = projectileDamageCost;
         data.money = money;
+        data.fuelCapacity = fuelCapacity;
+        data.fuelCapacityCost = fuelCapacityCost;
 
         string json = JsonUtility.ToJson(data);
 
@@ -87,6 +91,8 @@ public class DataManger : MonoBehaviour
             projectileDamage = data.projectileDamage;
             projectileDamageCost = data.projectileDamageCost;
             money = data.money;
+            fuelCapacity = data.fuelCapacity;
+            fuelCapacityCost = data.fuelCapacityCost;
         }
     }
 }
