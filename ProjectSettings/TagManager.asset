@@ -11,6 +11,9 @@ TagManager:
   - Earth
   - LeftBound
   - RightBound
+  - BeginSlide
+  - NextButton
+  - BackButton
   layers:
   - Default
   - TransparentFX

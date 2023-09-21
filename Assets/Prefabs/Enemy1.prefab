@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7164183184056539089}
   m_LocalRotation: {x: 0, y: 0, z: -0.073777825, w: 0.9972747}
   m_LocalPosition: {x: -5.1, y: 4.4, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 9, y: 8, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
   damage: 1
   limitRangeSpeed: 2
   destroyParticle: {fileID: 5148197756687965331, guid: 5f6252247152bb54386931af3372068f, type: 3}
-  enemyCost: 10
+  enemyCost: 20
   enemyHealth: 1
 --- !u!50 &7532152971186905779
 Rigidbody2D:

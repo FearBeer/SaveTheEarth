@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs;
+    public int enemyCount = 20;
+
+    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private float spawnInterval = 1;
+
     private float spawPositionLeft = -78;
     private float spawPositionRight = 46;
     private float spawnPositionTop = 3.0f;
-    [SerializeField] private float spawnInterval = 1;
-    public int enemyCount = 20;
-
-    [SerializeField] private PlayerController playerController;
 
     void Start()
     {

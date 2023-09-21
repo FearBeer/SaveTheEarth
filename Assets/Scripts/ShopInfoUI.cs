@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ShopInfoUI : MonoBehaviour
@@ -11,7 +8,9 @@ public class ShopInfoUI : MonoBehaviour
     private TextMeshProUGUI reload;
     private TextMeshProUGUI money;
     private TextMeshProUGUI projectileDamage;
-    // Start is called before the first frame update
+    private TextMeshProUGUI stationSpeed;
+    private TextMeshProUGUI fuelCapacity;
+
     void Start()
     {
         playerLifes = GameObject.Find("Lifes").GetComponent<TextMeshProUGUI>();
@@ -19,6 +18,8 @@ public class ShopInfoUI : MonoBehaviour
         reload = GameObject.Find("Reload").GetComponent<TextMeshProUGUI>();
         money = GameObject.Find("Money").GetComponent<TextMeshProUGUI>();
         projectileDamage = GameObject.Find("ProjectileDamage").GetComponent<TextMeshProUGUI>();
+        stationSpeed = GameObject.Find("StationSpeed").GetComponent<TextMeshProUGUI>();
+        fuelCapacity = GameObject.Find("Fuel").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -26,8 +27,10 @@ public class ShopInfoUI : MonoBehaviour
     {
         playerLifes.text = $"Lifes: {DataManger.Instance.playerHealth}";
         earthLifes.text = $"Earth lifes: {DataManger.Instance.earthHealth}";
-        reload.text = $"Reload: {DataManger.Instance.reloadTime}s";
+        reload.text = $"Reload: {DataManger.Instance.reloadTime.ToString("0.0")}s";
         money.text = $"Money: {DataManger.Instance.money}";
         projectileDamage.text = $"Damage: {DataManger.Instance.projectileDamage}";
+        stationSpeed.text = $"Speed: {DataManger.Instance.playerSpeed}";
+        fuelCapacity.text = $"Fuel: {DataManger.Instance.fuelCapacity}";
     }
 }

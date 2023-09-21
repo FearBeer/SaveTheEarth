@@ -13,32 +13,23 @@ public class MenuUI : MonoBehaviour
 
     public void GameStart()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     public void GameShop()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void GameSettings()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
-    public void NextLevel()
+    public void WinScene()
     {
-        int allScenceCount = SceneManager.sceneCountInBuildSettings;
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if(currentSceneIndex < allScenceCount - 1)
-        {
-            SceneManager.LoadScene(currentSceneIndex + 1);
-        } else
-        {
-            Debug.Log("Coming soon... NextLevel");
-        }
+        SceneManager.LoadScene(14);
     }
-
     public void TryAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -46,6 +37,6 @@ public class MenuUI : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

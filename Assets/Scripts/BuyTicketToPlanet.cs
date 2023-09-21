@@ -1,48 +1,44 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
-using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
 public class BuyTicketToPlanet : MonoBehaviour
 {
-    [SerializeField] GameObject moreMoney;
-    [SerializeField] MoneyBank moneyBank;
-    [SerializeField] TextMeshProUGUI flyToPlanet;
-    [SerializeField] private int cost;
-    [SerializeField] private int id;
+    [SerializeField] private GameObject moreMoney;
+    [SerializeField] private TextMeshProUGUI flyToPlanet;
     [SerializeField] private AudioClip upgradeComplete;
     [SerializeField] private AudioClip upgradeFail;
+    [SerializeField] private float moneyRate;
+    [SerializeField] private int cost;
+    [SerializeField] private int id;
 
-    private bool isMoneyEnough;
-    private int notLevelScenCount = 3;
+    private bool isFuelEnough;
+    private int notLevelScenCount = 4;
     private AudioSource audioSource;
-    private TextMeshProUGUI money;
+    private TextMeshProUGUI fuel;
     private DataManger dataManger;
     void Start()
     {
-        money = GameObject.Find("Money").GetComponent<TextMeshProUGUI>();
+        fuel = GameObject.Find("Fuel").GetComponent<TextMeshProUGUI>();
         dataManger = GameObject.Find("DataManager").GetComponent<DataManger>();
         audioSource = GetComponent<AudioSource>();
-
-        money.text = $"Money: {moneyBank.GetAllMoneyValue()}";
+        fuel.text = $"Fuel: {DataManger.Instance.fuelCapacity}";
         flyToPlanet.text = $"Fly to planet {id - notLevelScenCount}\n\n{cost}";
     }
+
     public void FlyToPlanet()
     {
-        if (DataManger.Instance.money >= cost)
+        if (DataManger.Instance.fuelCapacity >= cost)
         {
-            isMoneyEnough = true;
-            DataManger.Instance.money -= cost;
-            money.text = $"Money: {DataManger.Instance.money}";
+            isFuelEnough = true;
+            DataManger.Instance.moneyRate = moneyRate;
             dataManger.Save();
             LevelStart(id);
         }
         else
         {
-            isMoneyEnough = false;
+            isFuelEnough = false;
             StartCoroutine(timerRoutine());
         }
         PlaySound();
@@ -61,7 +57,7 @@ public class BuyTicketToPlanet : MonoBehaviour
 
     private void PlaySound()
     {
-        if (isMoneyEnough)
+        if (isFuelEnough)
         {
             audioSource.PlayOneShot(upgradeComplete, 1.0f);
         }

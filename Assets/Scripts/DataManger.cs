@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
@@ -18,7 +16,16 @@ public class DataManger : MonoBehaviour
     public float playerSpeed;
     public int playerSpeedCost;
     public int money;
-
+    public float moneyRate;
+    public int fuelCapacity;
+    public int fuelCapacityCost;
+    
+    public bool isMaxPlayerHP;
+    public bool isMaxEartHP;
+    public bool isMinReloadTime;
+    public bool isMaxDamage;
+    public bool isMaxSpeed;
+    public bool isMaxFuel;
     private void Awake()
     {
         if(Instance != null)
@@ -46,6 +53,15 @@ public class DataManger : MonoBehaviour
         public int projectileDamage;
         public int projectileDamageCost;
         public int money;
+        public int fuelCapacity;
+        public int fuelCapacityCost;
+
+        public bool isMaxPlayerHP;
+        public bool isMaxEartHP;
+        public bool isMinReloadTime;
+        public bool isMaxDamage;
+        public bool isMaxSpeed;
+        public bool isMaxFuel;
     }
 
     public void Save()
@@ -62,6 +78,14 @@ public class DataManger : MonoBehaviour
         data.projectileDamage = projectileDamage;
         data.projectileDamageCost = projectileDamageCost;
         data.money = money;
+        data.fuelCapacity = fuelCapacity;
+        data.fuelCapacityCost = fuelCapacityCost;
+        data.isMaxPlayerHP = isMaxPlayerHP;
+        data.isMaxEartHP = isMaxEartHP;
+        data.isMinReloadTime = isMinReloadTime;
+        data.isMaxDamage = isMaxDamage;
+        data.isMaxSpeed = isMaxSpeed;
+        data.isMaxFuel = isMaxFuel;
 
         string json = JsonUtility.ToJson(data);
 
@@ -86,6 +110,14 @@ public class DataManger : MonoBehaviour
             projectileDamage = data.projectileDamage;
             projectileDamageCost = data.projectileDamageCost;
             money = data.money;
+            fuelCapacity = data.fuelCapacity;
+            fuelCapacityCost = data.fuelCapacityCost;
+            isMaxPlayerHP = data.isMaxPlayerHP;
+            isMaxEartHP = data.isMaxEartHP;
+            isMinReloadTime = data.isMinReloadTime;
+            isMaxDamage = data.isMaxDamage;
+            isMaxSpeed = data.isMaxSpeed;
+            isMaxFuel = data.isMaxFuel;
         }
     }
 }
