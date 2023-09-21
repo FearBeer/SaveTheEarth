@@ -23,13 +23,13 @@ public class Reset : MonoBehaviour
         DataManger.Instance.reloadTimeCost = 200;
 
         DataManger.Instance.projectileDamage = 1;
-        DataManger.Instance.projectileDamageCost = 500;
+        DataManger.Instance.projectileDamageCost = 1000;
 
         DataManger.Instance.playerSpeed = 50;
         DataManger.Instance.playerSpeedCost = 250;
 
         DataManger.Instance.fuelCapacity = 100;
-        DataManger.Instance.fuelCapacityCost = 1000;
+        DataManger.Instance.fuelCapacityCost = 100;
 
         DataManger.Instance.money = 0;
         DataManger.Instance.moneyRate = 1;

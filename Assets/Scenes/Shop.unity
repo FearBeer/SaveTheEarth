@@ -182,7 +182,6 @@ MonoBehaviour:
   product: Reload Time
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  button: {fileID: 0}
 --- !u!114 &73736713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,7 +431,6 @@ MonoBehaviour:
   product: Station Speed
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  button: {fileID: 0}
 --- !u!114 &240771907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1866,10 +1864,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moreMoney: {fileID: 1638514886}
   textMeshPro: {fileID: 1737067119}
-  product: Fuel Capacity
+  product: Fuel
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  button: {fileID: 0}
 --- !u!114 &960243655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2915,7 +2912,6 @@ MonoBehaviour:
   product: Damage
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  button: {fileID: 0}
 --- !u!114 &1555835801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3995,7 +3991,6 @@ MonoBehaviour:
   product: Earth HP
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  button: {fileID: 0}
 --- !u!114 &1820319869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4538,7 +4533,6 @@ MonoBehaviour:
   product: Extra Life
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  button: {fileID: 0}
 --- !u!82 &2080131613
 AudioSource:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6065404071186977264}
   - component: {fileID: -1286741275799717550}
   m_Layer: 0
-  m_Name: Enemy2
+  m_Name: Enemy2+
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 06ebc3b6f7d199745ac6895e9d0f2e09, type: 3}
-  m_Color: {r: 0.11307405, g: 0.21809126, b: 0.31132078, a: 1}
+  m_Color: {r: 0.38679248, g: 0.26859552, b: 0.19886972, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,12 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f2d14e4243efa4982d73dc8eb5758f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 13
+  enemySpeed: 15
   timer: 1
   damage: 2
   limitRangeSpeed: 2
   destroyParticle: {fileID: 5148197756687965331, guid: 5f6252247152bb54386931af3372068f, type: 3}
-  enemyCost: 75
+  enemyCost: 100
   enemyHealth: 2
 --- !u!50 &5066230448185082312
 Rigidbody2D:
@@ -156,11 +156,11 @@ PolygonCollider2D:
     - - {x: 0.49972224, y: 0.3045834}
       - {x: 0.36972225, y: 0.39458337}
       - {x: 0.2254166, y: 0.43916675}
-      - {x: 0.13153589, y: 0.44066256}
+      - {x: 0.11572793, y: 0.4354388}
       - {x: 0.04, y: 0.48}
       - {x: -0.049999997, y: 0.46458346}
-      - {x: -0.23082675, y: 0.37756684}
-      - {x: -0.4044273, y: 0.27642772}
+      - {x: -0.22861768, y: 0.391429}
+      - {x: -0.4094446, y: 0.29972225}
       - {x: -0.49944445, y: 0.04458342}
       - {x: -0.49430573, y: -0.17027773}
       - {x: -0.47, y: -0.26}
@@ -169,7 +169,7 @@ PolygonCollider2D:
       - {x: -0.16, y: -0.45}
       - {x: -0.07458342, y: -0.4340279}
       - {x: 0.12, y: -0.47}
-      - {x: 0.18498267, y: -0.43670544}
+      - {x: 0.19076666, y: -0.43665826}
       - {x: 0.27984503, y: -0.34658903}
       - {x: 0.39430562, y: -0.29972225}
       - {x: 0.49944454, y: -0.19999999}

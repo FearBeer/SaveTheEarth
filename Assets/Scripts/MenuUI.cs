@@ -26,19 +26,10 @@ public class MenuUI : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-   // public void NextLevel()
-   // {
-        //int allScenceCount = SceneManager.sceneCountInBuildSettings;
-        //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        //if(currentSceneIndex < allScenceCount - 1)
-        //{
-        //    SceneManager.LoadScene(currentSceneIndex + 1);
-        //} else
-        //{
-        //    Debug.Log("Coming soon... NextLevel");
-        //}
-   // }
-
+    public void WinScene()
+    {
+        SceneManager.LoadScene(14);
+    }
     public void TryAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

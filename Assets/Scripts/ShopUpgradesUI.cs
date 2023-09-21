@@ -72,7 +72,7 @@ public class ShopUpgradesUI : MonoBehaviour
         if (DataManger.Instance.isMaxFuel)
         {
             fuelButton.interactable = false;
-            projectileDamageCost.text = $"Fuel:\n\n Max";
+            fuelCapacityCost.text = $"Fuel:\n\n Max";
         }
         else
         {

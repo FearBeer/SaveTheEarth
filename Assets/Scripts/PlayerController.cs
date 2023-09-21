@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Button nextLevelButton;
     [SerializeField] private Button tryAgainButton;
+    [SerializeField] private Button shopButton;
     [SerializeField] private AudioClip fireSound;
     private EnemySpawner spawner;
     private Rigidbody2D rigidBody;
@@ -60,6 +61,7 @@ public class PlayerController : MonoBehaviour
         if (isGameActive && destroyedEneemies == spawner.enemyCount)
         {
             nextLevelButton.gameObject.SetActive(true);
+            shopButton.gameObject.SetActive(true);
         }
         if (Input.GetKeyDown(KeyCode.Space) && isGameActive && timeToFire == 0)
         {
@@ -128,5 +130,6 @@ public class PlayerController : MonoBehaviour
     {
         isGameActive = false;
         tryAgainButton.gameObject.SetActive(true);
+        shopButton.gameObject.SetActive(true);
     }
 }

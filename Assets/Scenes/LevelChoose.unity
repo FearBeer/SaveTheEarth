@@ -320,7 +320,7 @@ MonoBehaviour:
   flyToPlanet: {fileID: 2040742649}
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  moneyRate: 2
+  moneyRate: 5
   cost: 1600
   id: 9
 --- !u!114 &243336529
@@ -780,7 +780,7 @@ MonoBehaviour:
   flyToPlanet: {fileID: 2008477102}
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  moneyRate: 2.8
+  moneyRate: 8
   cost: 12800
   id: 12
 --- !u!114 &483433885
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   flyToPlanet: {fileID: 1672226982}
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  moneyRate: 1.8
+  moneyRate: 2.5
   cost: 800
   id: 8
 --- !u!114 &896514881
@@ -1529,7 +1529,7 @@ MonoBehaviour:
   flyToPlanet: {fileID: 230850343}
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  moneyRate: 2.5
+  moneyRate: 7
   cost: 6400
   id: 11
 --- !u!114 &1060703619
@@ -2206,7 +2206,7 @@ MonoBehaviour:
   flyToPlanet: {fileID: 1446572960}
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  moneyRate: 1.5
+  moneyRate: 2
   cost: 400
   id: 7
 --- !u!114 &1343567717
@@ -2646,8 +2646,8 @@ RectTransform:
   m_Children:
   - {fileID: 1805502444}
   - {fileID: 2092982068}
-  - {fileID: 1638514887}
   - {fileID: 1877168724}
+  - {fileID: 1638514887}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2837,11 +2837,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1360194909}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -505, y: 340}
   m_SizeDelta: {x: 920, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638514888
@@ -3252,7 +3252,7 @@ MonoBehaviour:
   flyToPlanet: {fileID: 2132954184}
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  moneyRate: 2
+  moneyRate: 6
   cost: 3200
   id: 10
 --- !u!114 &1736847992
@@ -3706,7 +3706,7 @@ RectTransform:
   m_Children:
   - {fileID: 1170226267}
   m_Father: {fileID: 1360194909}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4017,7 +4017,7 @@ MonoBehaviour:
   flyToPlanet: {fileID: 1070979785}
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  moneyRate: 4
+  moneyRate: 10
   cost: 25600
   id: 13
 --- !u!114 &1918370346
@@ -4283,7 +4283,7 @@ MonoBehaviour:
   flyToPlanet: {fileID: 1344449160}
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
-  moneyRate: 1.2
+  moneyRate: 1.5
   cost: 200
   id: 6
 --- !u!114 &1943676482

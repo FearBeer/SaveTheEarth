@@ -106,7 +106,7 @@ MonoBehaviour:
   damage: 1
   limitRangeSpeed: 2
   destroyParticle: {fileID: 5148197756687965331, guid: 5f6252247152bb54386931af3372068f, type: 3}
-  enemyCost: 10
+  enemyCost: 20
   enemyHealth: 1
 --- !u!50 &7532152971186905779
 Rigidbody2D:

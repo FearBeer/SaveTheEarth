@@ -14,7 +14,7 @@ public class Upgrade : MonoBehaviour
     [SerializeField] private AudioClip upgradeFail;
     private bool isUpgardeComplete;
     private AudioSource audioSource;
-    public Button button;
+    private Button button;
     public Action<int> valueChange;
 
     private DataManger dataManger; 
@@ -44,7 +44,7 @@ public class Upgrade : MonoBehaviour
 
     public void changePlayerHealth(int cost)
     {
-        int limit = 20;
+        int limit = 50;
         if(DataManger.Instance.playerHealth < limit -1)
         {
             cost = DataManger.Instance.playerHealthCost;
@@ -52,9 +52,12 @@ public class Upgrade : MonoBehaviour
             if(DataManger.Instance.playerHealth <= 10)
             {
                 cost += 100;
-            } else
+            } else if (DataManger.Instance.playerHealth <= 20)
             {
                 cost += 1000;
+            } else
+            {
+                cost += 5000;
             }
             DataManger.Instance.playerHealthCost = cost;
             textMeshPro.text = $"{product}:\n\n{cost}";
@@ -79,7 +82,7 @@ public class Upgrade : MonoBehaviour
 
     public void changeEarthHealth(int cost)
     {
-        int limit = 20;
+        int limit = 50;
         if(DataManger.Instance.earthHealth < limit - 1)
         {
             cost = DataManger.Instance.earthHealthCost;
@@ -87,9 +90,15 @@ public class Upgrade : MonoBehaviour
             if(DataManger.Instance.earthHealth <= 10)
             {
                 cost += 150;
-            } else
+            } else if (DataManger.Instance.earthHealth <= 20)
             {
                 cost += 1500;
+            } else if (DataManger.Instance.earthHealth <= 30)
+            {
+                cost += 3000;
+            } else
+            {
+                cost += 10000;
             }
             DataManger.Instance.earthHealthCost = cost;
             textMeshPro.text = $"{product}:\n\n{cost}";
