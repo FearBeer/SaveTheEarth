@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 235015268}
   - component: {fileID: 235015270}
   - component: {fileID: 235015269}
+  - component: {fileID: 235015271}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -598,6 +599,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235015267}
   m_CullTransparentMesh: 1
+--- !u!114 &235015271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235015267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u0418\u0433\u0440\u0430\u0442\u044C"
+  en: To Game
 --- !u!1 &284440609
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +732,7 @@ GameObject:
   - component: {fileID: 469408832}
   - component: {fileID: 469408834}
   - component: {fileID: 469408833}
+  - component: {fileID: 469408835}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -852,6 +868,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469408831}
   m_CullTransparentMesh: 1
+--- !u!114 &469408835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469408831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "2067 \u0433\u043E\u0434. \u041A\u0430\u043A \u043E\u043A\u0430\u0437\u0430\u043B\u043E\u0441\u044C
+    - \u043D\u0435 \u043B\u0430\u0434\u043D\u043E, \u0445\u043E\u0442\u044C \u0438
+    \u0431\u044B\u0432\u0430\u0435\u0442. \u0422\u0435\u043F\u0435\u0440\u044C \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430
+    \u0437\u0435\u043C\u043D\u043E\u0433\u043E \u0448\u0430\u0440\u0438\u043A\u0430
+    \u0432\u044B\u0433\u043B\u044F\u0434\u0438\u0442 \u043A\u0430\u043A \u0432\u044B\u0436\u0436\u0435\u043D\u043D\u0430\u044F
+    \u043F\u0443\u0441\u0442\u044B\u043D\u044F \u0441 \u043A\u0440\u0430\u0442\u0435\u0440\u0430\u043C\u0438
+    \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u043C \u0441 \u0431\u044B\u0432\u0448\u0438\u0435
+    \u0433\u043E\u0440\u043E\u0434\u0430, \u043D\u0430\u043F\u0440\u0438\u043C\u0435\u0440,
+    \u041A\u0430\u0438\u0440 \u0438\u043B\u0438 \u0422\u043E\u043A\u0438\u043E. 
+    \u041D\u043E \u0434\u0430\u0436\u0435 \u0442\u0430\u043A, \u043D\u0435 \u0441\u0442\u043E\u0438\u0442
+    \u0443\u043D\u044B\u0432\u0430\u0442\u044C!(\u043D\u043E \u044D\u0442\u043E \u043D\u0435
+    \u0442\u043E\u0447\u043D\u043E)"
+  en: "2067 As it turned out, it\u2019s not okay, although it happens. Now half the
+    globe looks like a scorched desert with craters the size of former cities, for
+    example, Cairo or Tokyo. But even so, don\u2019t be discouraged! (But this is
+    not certain)"
 --- !u!1 &658241800
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +984,7 @@ GameObject:
   - component: {fileID: 715944317}
   - component: {fileID: 715944319}
   - component: {fileID: 715944318}
+  - component: {fileID: 715944320}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -1073,6 +1118,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715944316}
   m_CullTransparentMesh: 1
+--- !u!114 &715944320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715944316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "2039 \u0433\u043E\u0434. \u0412\u0438\u0434\u0438\u043C\u043E, \u0434\u0430\u0436\u0435
+    \u043A\u043E\u0441\u043C\u043E\u0441 \u0443\u0441\u0442\u0430\u043B \u043E\u0442
+    \u043B\u044E\u0434\u0441\u043A\u043E\u0439 \u0442\u0443\u043F\u043E\u0441\u0442\u0438.
+    \u0418\u043D\u0430\u0447\u0435, \u043A\u0430\u043A \u043E\u0431\u044A\u044F\u0441\u043D\u0438\u0442\u044C,
+    \u0447\u0442\u043E \u0447\u0435\u043B\u043E\u0432\u0435\u0447\u0435\u0441\u0442\u0432\u043E
+    \u043F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u043B\u043E \u043F\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u0435
+    \u0432 \u0441\u043E\u043B\u043D\u0435\u0447\u043D\u043E\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u0435
+    \u0435\u0449\u0451 \u043E\u0434\u043D\u043E\u0433\u043E \u043F\u043E\u044F\u0441\u0430
+    \u0430\u0441\u0442\u0435\u0440\u043E\u0438\u0434\u043E\u0432? \u041F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u043B\u0438
+    - \u0438 \u043B\u0430\u0434\u043D\u043E... \u0431\u044B\u0432\u0430\u0435\u0442..."
+  en: 2039 Apparently, even space is tired of human stupidity. Otherwise, how can
+    we explain that humanity missed the appearance of another asteroid belt in the
+    solar system? We missed it - and okay... it happens...
 --- !u!1 &838974574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,6 +1810,7 @@ GameObject:
   - component: {fileID: 1300165255}
   - component: {fileID: 1300165257}
   - component: {fileID: 1300165256}
+  - component: {fileID: 1300165258}
   m_Layer: 5
   m_Name: Control
   m_TagString: Untagged
@@ -1887,6 +1958,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300165254}
   m_CullTransparentMesh: 1
+--- !u!114 &1300165258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300165254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u0414\u043B\u044F \u0442\u0432\u043E\u0435\u0433\u043E \u0443\u0434\u043E\u0431\u0441\u0442\u0432\u0430,
+    \u0441\u043E\u0437\u0434\u0430\u0442\u0435\u043B\u0438 \u043F\u0440\u0438\u0431\u0430\u0431\u0430\u0445\u0430\u043B\u0438
+    \u043A\u043E \u043C\u043D\u0435 \u043F\u0440\u0438\u043C\u0442\u0438\u0432\u043D\u0435\u0439\u0448\u0443\u044E
+    \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u044E. \u0423\u043F\u0440\u0430\u0432\u043B\u044F\u0442\u044C
+    \u0441\u0442\u0430\u043D\u0446\u0438\u0435\u0439 \u043A\u0440\u0430\u0439\u043D\u0435
+    \u043F\u0440\u043E\u0441\u0442\u043E:  \u0436\u043C\u0438 \u043A\u043D\u043E\u043F\u043E\u0447\u043A\u0438
+    \u0432\u043F\u0440\u0430\u0432\u043E-\u0432\u043B\u0435\u0432\u043E \u0434\u043B\u044F
+    \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F \u0438
+    \u043F\u0440\u043E\u0431\u0435\u043B, \u0447\u0442\u043E\u0431\u044B \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C
+    \u043F\u0440\u0438\u0431\u043B\u0438\u0436\u0430\u044E\u0449\u0438\u0439\u0441\u044F
+    \u0430\u0441\u0442\u0435\u0440\u043E\u0438\u0434.  \u0422\u0430\u043A\u0436\u0435,
+    \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0444\u0443\u043D\u043A\u0446\u0438\u0438
+    \u0441\u0442\u0430\u043D\u0446\u0438\u0438 \u044F \u0437\u0430\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u043B,
+    \u0438 \u0442\u0435\u0431\u0435 \u043F\u0440\u0438\u0434\u0451\u0442\u0441\u044F
+    \u043F\u043E\u0442\u0440\u0443\u0434\u0438\u0442\u044C\u0441\u044F, \u0447\u0442\u043E\u0431\u044B
+    \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043A \u043D\u0438\u043C \u0434\u043E\u0441\u0442\u0443\u043F
+    (\u043A\u043D\u043E\u043F\u043A\u0430 \u043C\u0430\u0433\u0430\u0437\u0438\u043D).
+    \u0416\u0435\u043B\u0430\u044E \u043D\u0430\u043C \u0443\u0434\u0430\u0447\u0438,
+    \u043F\u0440\u043E\u0448\u0443 \u0437\u0430\u043D\u044F\u0442\u044C \u0441\u0432\u043E\u0451
+    \u043C\u0435\u0441\u0442\u043E \u0432 \u043A\u0430\u043F\u0441\u0443\u043B\u0435
+    \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F... \u043D\u0435
+    \u0431\u043E\u0439\u0441\u044F, \u0441\u0438\u043D\u0445\u0440\u043E\u043D\u0438\u0437\u0430\u0446\u0438\u044F
+    \u0431\u0435\u0437\u0431\u043E\u043B\u0435\u0437\u043D\u0435\u043D\u043D\u0430...
+    \u043D\u0430\u0434\u0435\u044E\u0441\u044C... \u0425\u0410\u0425\u0410\u0425\u0410!!!"
+  en: ' For your convenience, the creators gave me the most primitive technology.
+    Controlling the station is extremely simple: press the left and right buttons
+    to move and the space bar to destroy the approaching asteroid. Also, I have blocked
+    some functions of the station, and you will have to work hard to access them
+    (store button). I wish us good luck, please take your place in the control capsule...
+    don''t be afraid, synchronization is painless... I hope... HAHAHA!!!'
 --- !u!1 &1574291201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,6 +2059,7 @@ GameObject:
   - component: {fileID: 1620217277}
   - component: {fileID: 1620217279}
   - component: {fileID: 1620217278}
+  - component: {fileID: 1620217280}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -2075,6 +2189,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620217276}
   m_CullTransparentMesh: 1
+--- !u!114 &1620217280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620217276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "- \u041A\u0430\u043F\u0438\u0442\u0430\u043D \u041E\u0433\u0440\u043E\u043C\u043D\u043E\u0439
+    \u0420\u0430\u0437\u0443\u043C\u043D\u043E\u0439 \u041C\u0430\u0448\u0438\u043D\u044B,
+    \u043F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E \u0442\u0435\u0431\u044F
+    \u043D\u0430 \u0431\u043E\u0440\u0442\u0443. \u0412\u0440\u044F\u0434-\u043B\u0438
+    \u0442\u044B \u0447\u0442\u043E-\u0442\u043E \u043F\u043E\u043D\u0438\u043C\u0430\u0435\u0448\u044C,
+    \u043F\u043E\u0442\u043E\u043C\u0443 \u0441\u043B\u0443\u0448\u0430\u0439 \u0432\u043D\u0438\u043C\u0430\u0442\u0435\u043B\u044C\u043D\u043E! "
+  en: "- Captain of the Huge Intelligent Machine, I welcome you on board. It\u2019s
+    unlikely that you understand anything, so listen carefully!"
 --- !u!1 &1656805108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,6 +2220,7 @@ GameObject:
   - component: {fileID: 1656805109}
   - component: {fileID: 1656805111}
   - component: {fileID: 1656805110}
+  - component: {fileID: 1656805112}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -2225,6 +2360,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656805108}
   m_CullTransparentMesh: 1
+--- !u!114 &1656805112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656805108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "2070 \u0433\u043E\u0434. \u041E\u0431\u0449\u0435\u043C\u0438\u0440\u043E\u0432\u043E\u0435
+    \u041F\u0440\u0430\u0432\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E
+    \u0438 \u0410\u043B\u044C\u044F\u043D\u0441 \u041D\u0430\u0440\u043E\u0434\u043D\u044B\u0445
+    \u0410\u043D\u0430\u0440\u0445\u0438\u0441\u0442\u043E\u0432 (\u041E\u041F\u0410\u041D\u0410)
+    \u0434\u043E\u0441\u0442\u0440\u043E\u0438\u043B\u0438 \u043A\u043E\u0441\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0439
+    \u043A\u043E\u0440\u0430\u0431\u043B\u044C \u0438 \u0441\u043C\u043E\u0433\u043B\u0438
+    \u0432\u043D\u0435\u0434\u0440\u0438\u0442\u044C \u0432 \u043D\u0435\u0433\u043E
+    \u0432\u0435\u043B\u0438\u0447\u0430\u0439\u0448\u0443\u044E \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0443:
+    \u0417\u0435\u043C\u043B\u044F 0 - \u041C\u0435\u0445\u0430\u043D\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439
+    \u0411\u0438\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0439
+    \u0418\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442!(\u0442.\u0435. \u043C\u0435\u043D\u044F)
+    \u0412\u043E\u0442 \u0442\u043E\u043B\u044C\u043A\u043E \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B
+    \u043C\u043D\u0435 \u043D\u0443\u0436\u0435\u043D \u0436\u0438\u0432\u043E\u0439
+    \u0438  \u0440\u0430\u0431\u043E\u0442\u043E\u0441\u043F\u043E\u0441\u043E\u0431\u043D\u044B\u0439
+    \u043C\u043E\u0437\u0433. \u0414\u0430-\u0434\u0430, \u04170\u041C\u0411\u0418
+    \u043D\u0443\u0436\u043D\u044B \u043C\u043E\u0437\u0433\u0438..."
+  en: ' 2070 The World Government and the Alliance of People''s Anarchists (OPANA)
+    completed the spaceship and were able to introduce into it the greatest development:
+    Earth 0 - Mechanized Biological Intelligence! (i.e. me) But for work I need a
+    living and efficient brain. Yes, yes, Z0MBI needs brains...'
 --- !u!1 &1713579723
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,6 +2657,7 @@ GameObject:
   - component: {fileID: 1821999687}
   - component: {fileID: 1821999689}
   - component: {fileID: 1821999688}
+  - component: {fileID: 1821999690}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2614,6 +2782,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821999686}
   m_CullTransparentMesh: 1
+--- !u!114 &1821999690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821999686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u0412\u043F\u0435\u0440\u0451\u0434 >>"
+  en: Next >>
 --- !u!1 &1945919145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2913,6 +3095,7 @@ GameObject:
   - component: {fileID: 2010004343}
   - component: {fileID: 2010004345}
   - component: {fileID: 2010004344}
+  - component: {fileID: 2010004346}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3037,6 +3220,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010004342}
   m_CullTransparentMesh: 1
+--- !u!114 &2010004346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010004342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "<< \u041D\u0430\u0437\u0430\u0434"
+  en: << Back
 --- !u!1 &2018602051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3048,6 +3245,7 @@ GameObject:
   - component: {fileID: 2018602052}
   - component: {fileID: 2018602054}
   - component: {fileID: 2018602053}
+  - component: {fileID: 2018602055}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -3179,6 +3377,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018602051}
   m_CullTransparentMesh: 1
+--- !u!114 &2018602055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018602051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u0422\u0435\u043F\u0435\u0440\u044C \u043E \u0431\u0443\u0434\u0443\u0449\u0435\u043C:
+    - \u041A\u0430\u043A \u0442\u044B \u043F\u043E\u043D\u044F\u043B (\u043D\u0430\u0434\u0435\u044E\u0441\u044C)
+    - \u043A\u043E\u0440\u043C\u043E\u043C \u0431\u0443\u0434\u0435\u0448\u044C \u0442\u044B!
+    \u0412\u043F\u0435\u0440\u0451\u0434, \u0434\u043E\u0431\u0443\u0434\u044C \u043F\u043E\u0431\u0435\u0434\u0443
+    \u0447\u0435\u043B\u043E\u0432\u0435\u0447\u0435\u0441\u0442\u0432\u0443!!! \u041E\u0439...
+    \u0442\u043E \u0435\u0441\u0442\u044C, \u0412\u044B \u0438\u0437\u0431\u0440\u0430\u043D\u043D\u044B\u0439,
+    \u0438 \u0438\u043C\u0435\u043D\u043D\u043E \u043E\u0442 \u0412\u0430\u0441 \u0437\u0430\u0432\u0438\u0441\u0438\u0442
+    \u0441\u0443\u0434\u044C\u0431\u0430 \u041E\u041F\u0410\u041D\u0410!!!"
+  en: 'Now about the future: - As you understand (I hope) - you will be the food!
+    Go ahead, bring victory to humanity!!! Oh... that is, you are the chosen one,
+    and the fate of OPANA depends on you!!!'
+--- !u!1 &2045461728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045461730}
+  - component: {fileID: 2045461729}
+  m_Layer: 0
+  m_Name: Language
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2045461729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045461728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02c17b2c8c59ae48bbbd1c5026e7a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLanguage: 
+--- !u!4 &2045461730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045461728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.538692, y: 0.61284035, z: 0.35800946}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2046956236
 GameObject:
   m_ObjectHideFlags: 0
