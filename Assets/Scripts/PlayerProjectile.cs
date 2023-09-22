@@ -7,7 +7,7 @@ public class PlayerProjectile : MonoBehaviour
     void Start()
     {
         projectileRb = GetComponent<Rigidbody2D>();
-        switch(DataManger.Instance.projectileDamage)
+        switch(DataManger.Instance.playerInfo.projectileDamage)
         {
             case 1:
                 transform.localScale *= 1;

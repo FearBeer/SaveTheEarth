@@ -30,10 +30,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isGameActive = true;
-        playerHealth = DataManger.Instance.playerHealth;
-        earthHealth = DataManger.Instance.earthHealth;
-        reloadTime = DataManger.Instance.reloadTime;
-        playerSpeed = DataManger.Instance.playerSpeed;
+        playerHealth = DataManger.Instance.playerInfo.playerHealth;
+        earthHealth = DataManger.Instance.playerInfo.earthHealth;
+        reloadTime = DataManger.Instance.playerInfo.reloadTime;
+        playerSpeed = DataManger.Instance.playerInfo.playerSpeed;
         rigidBody = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         spawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();

@@ -23,13 +23,13 @@ public class BuyTicketToPlanet : MonoBehaviour
         fuel = GameObject.Find("Fuel").GetComponent<TextMeshProUGUI>();
         dataManger = GameObject.Find("DataManager").GetComponent<DataManger>();
         audioSource = GetComponent<AudioSource>();
-        fuel.text = $"Fuel: {DataManger.Instance.fuelCapacity}";
+        fuel.text = $"Fuel: {DataManger.Instance.playerInfo.fuelCapacity}";
         flyToPlanet.text = $"Fly to planet {id - notLevelScenCount}\n\n{cost}";
     }
 
     public void FlyToPlanet()
     {
-        if (DataManger.Instance.fuelCapacity >= cost)
+        if (DataManger.Instance.playerInfo.fuelCapacity >= cost)
         {
             isFuelEnough = true;
             DataManger.Instance.moneyRate = moneyRate;

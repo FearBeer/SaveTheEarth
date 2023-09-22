@@ -98,7 +98,7 @@ public class EnemyBehavouir : MonoBehaviour
         if (collision.gameObject.tag == "PlayerProjectile")
         {
             Destroy(collision.gameObject);
-            enemyHealth -= DataManger.Instance.projectileDamage;
+            enemyHealth -= DataManger.Instance.playerInfo.projectileDamage;
             if (enemyHealth < 1)
             {
                 sounds.DestroyEnemySound();

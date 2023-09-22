@@ -25,12 +25,12 @@ public class ShopInfoUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerLifes.text = $"Lifes: {DataManger.Instance.playerHealth}";
-        earthLifes.text = $"Earth lifes: {DataManger.Instance.earthHealth}";
-        reload.text = $"Reload: {DataManger.Instance.reloadTime.ToString("0.0")}s";
-        money.text = $"Money: {DataManger.Instance.money}";
-        projectileDamage.text = $"Damage: {DataManger.Instance.projectileDamage}";
-        stationSpeed.text = $"Speed: {DataManger.Instance.playerSpeed}";
-        fuelCapacity.text = $"Fuel: {DataManger.Instance.fuelCapacity}";
+        playerLifes.text = $"Lifes: {DataManger.Instance.playerInfo.playerHealth}";
+        earthLifes.text = $"Earth lifes: {DataManger.Instance.playerInfo.earthHealth}";
+        reload.text = $"Reload: {DataManger.Instance.playerInfo.reloadTime.ToString("0.0")}s";
+        money.text = $"Money: {DataManger.Instance.playerInfo.money}";
+        projectileDamage.text = $"Damage: {DataManger.Instance.playerInfo.projectileDamage}";
+        stationSpeed.text = $"Speed: {DataManger.Instance.playerInfo.playerSpeed}";
+        fuelCapacity.text = $"Fuel: {DataManger.Instance.playerInfo.fuelCapacity}";
     }
 }
