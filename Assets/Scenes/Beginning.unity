@@ -230,26 +230,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInfo:
-    playerHealth: 0
-    playerHealthCost: 0
-    earthHealth: 0
-    earthHealthCost: 0
-    reloadTime: 0
-    reloadTimeCost: 0
-    playerSpeed: 0
-    playerSpeedCost: 0
-    projectileDamage: 0
-    projectileDamageCost: 0
+    playerHealth: 1
+    playerHealthCost: 100
+    earthHealth: 1
+    earthHealthCost: 150
+    reloadTime: 2
+    reloadTimeCost: 200
+    playerSpeed: 50
+    playerSpeedCost: 250
+    projectileDamage: 1
+    projectileDamageCost: 1000
     money: 0
-    fuelCapacity: 0
-    fuelCapacityCost: 0
+    fuelCapacity: 100
+    fuelCapacityCost: 100
     isMaxPlayerHP: 0
     isMaxEartHP: 0
     isMinReloadTime: 0
     isMaxDamage: 0
     isMaxSpeed: 0
     isMaxFuel: 0
-  moneyRate: 0
+  moneyRate: 1
 --- !u!4 &109272790
 Transform:
   m_ObjectHideFlags: 0
