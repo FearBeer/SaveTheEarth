@@ -271,70 +271,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54659068}
   m_CullTransparentMesh: 1
---- !u!1 &109272788
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 109272790}
-  - component: {fileID: 109272789}
-  m_Layer: 0
-  m_Name: DataManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &109272789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109272788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86ae22bb26229514fa2fe2ea7d221fc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: 1
-  playerHealthCost: 10
-  earthHealth: 1
-  earthHealthCost: 20
-  reloadTime: 2
-  reloadTimeCost: 30
-  projectileDamage: 1
-  projectileDamageCost: 500
-  playerSpeed: 50
-  playerSpeedCost: 50
-  money: 0
-  moneyRate: 1
-  fuelCapacity: 100
-  fuelCapacityCost: 1000
-  isMaxPlayerHP: 0
-  isMaxEartHP: 0
-  isMinReloadTime: 0
-  isMaxDamage: 0
-  isMaxSpeed: 0
-  isMaxFuel: 0
---- !u!4 &109272790
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109272788}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 982.69244, y: 1969.0385, z: -26.485817}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &118917137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,7 +1896,7 @@ Transform:
   m_Children:
   - {fileID: 118917141}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1620217276
 GameObject:

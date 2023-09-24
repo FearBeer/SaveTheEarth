@@ -18,7 +18,7 @@ public class ShopUpgradesUI : MonoBehaviour
     [SerializeField] private Button damageButton;
     [SerializeField] private Button fuelButton;
 
-    void Start()
+    void Awake()
     {
         if(DataManger.Instance.playerInfo.isMaxPlayerHP)
         {

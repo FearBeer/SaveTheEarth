@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.IO;
 using System.Runtime.InteropServices;
 
 [System.Serializable]
@@ -40,10 +39,11 @@ public class DataManger : MonoBehaviour
             return;
         } else
         {
-            DontDestroyOnLoad(gameObject);
             Instance = this;
+            DontDestroyOnLoad(gameObject);
             LoadExternal();
         }
+        
     }
 
     [DllImport("__Internal")]
@@ -57,9 +57,14 @@ public class DataManger : MonoBehaviour
         string json = JsonUtility.ToJson(playerInfo);
         SaveExternal(json);
     }
-
     public void Load(string value)
-    {
-        playerInfo = JsonUtility.FromJson<SaveData>(value);
+    {        
+        if(value == "{}")
+        {
+            Save();
+        } else
+        {
+            playerInfo = JsonUtility.FromJson<SaveData>(value);
+        }
     }
 }
