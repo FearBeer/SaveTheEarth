@@ -11,6 +11,14 @@ public class ShopInfoUI : MonoBehaviour
     private TextMeshProUGUI stationSpeed;
     private TextMeshProUGUI fuelCapacity;
 
+    private string playerHPName;
+    private string earthHPName;
+    private string reloadName;
+    private string speedName;
+    private string damageName;
+    private string fuelName;
+    private string moneyName;
+
     void Start()
     {
         playerLifes = GameObject.Find("Lifes").GetComponent<TextMeshProUGUI>();
@@ -20,17 +28,38 @@ public class ShopInfoUI : MonoBehaviour
         projectileDamage = GameObject.Find("ProjectileDamage").GetComponent<TextMeshProUGUI>();
         stationSpeed = GameObject.Find("StationSpeed").GetComponent<TextMeshProUGUI>();
         fuelCapacity = GameObject.Find("Fuel").GetComponent<TextMeshProUGUI>();
+
+        if (Language.Instance.currentLanguage == "en")
+        {
+            playerHPName = "Shield";
+            earthHPName = "Population";
+            reloadName = "Reload";
+            speedName = "Speed";
+            damageName = "Damge";
+            fuelName = "Fuel";
+            moneyName = "Money";
+        }
+        else
+        {
+            playerHPName = "Щит";
+            earthHPName = "Население";
+            reloadName = "Перезарядка";
+            speedName = "Скорость";
+            damageName = "Урон";
+            fuelName = "Топливо";
+            moneyName = "Валюта";
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerLifes.text = $"Lifes: {DataManger.Instance.playerInfo.playerHealth}";
-        earthLifes.text = $"Earth lifes: {DataManger.Instance.playerInfo.earthHealth}";
-        reload.text = $"Reload: {DataManger.Instance.playerInfo.reloadTime.ToString("0.0")}s";
-        money.text = $"Money: {DataManger.Instance.playerInfo.money}";
-        projectileDamage.text = $"Damage: {DataManger.Instance.playerInfo.projectileDamage}";
-        stationSpeed.text = $"Speed: {DataManger.Instance.playerInfo.playerSpeed}";
-        fuelCapacity.text = $"Fuel: {DataManger.Instance.playerInfo.fuelCapacity}";
+        playerLifes.text = $"{playerHPName}: {DataManger.Instance.playerInfo.playerHealth}";
+        earthLifes.text = $"{earthHPName}: {DataManger.Instance.playerInfo.earthHealth}";
+        reload.text = $"{reloadName}: {DataManger.Instance.playerInfo.reloadTime.ToString("0.0")}s";
+        money.text = $"{moneyName}: {DataManger.Instance.playerInfo.money}";
+        projectileDamage.text = $"{damageName}: {DataManger.Instance.playerInfo.projectileDamage}";
+        stationSpeed.text = $"{speedName}: {DataManger.Instance.playerInfo.playerSpeed}";
+        fuelCapacity.text = $"{fuelName}: {DataManger.Instance.playerInfo.fuelCapacity}";
     }
 }

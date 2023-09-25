@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 235015268}
   - component: {fileID: 235015270}
   - component: {fileID: 235015269}
+  - component: {fileID: 235015271}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -373,6 +374,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235015267}
   m_CullTransparentMesh: 1
+--- !u!114 &235015271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235015267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u0418\u0433\u0440\u0430\u0442\u044C"
+  en: Play
 --- !u!1 &361054560
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +399,7 @@ GameObject:
   - component: {fileID: 361054561}
   - component: {fileID: 361054563}
   - component: {fileID: 361054562}
+  - component: {fileID: 361054564}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -508,6 +524,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361054560}
   m_CullTransparentMesh: 1
+--- !u!114 &361054564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361054560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
+  en: Shop
 --- !u!1 &420239007
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,6 +869,7 @@ GameObject:
   - component: {fileID: 591462930}
   - component: {fileID: 591462932}
   - component: {fileID: 591462931}
+  - component: {fileID: 591462933}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -963,6 +994,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591462929}
   m_CullTransparentMesh: 1
+--- !u!114 &591462933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591462929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+  en: Settings
 --- !u!1 &1016659872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,6 +1776,7 @@ GameObject:
   - component: {fileID: 1198685889}
   - component: {fileID: 1198685891}
   - component: {fileID: 1198685890}
+  - component: {fileID: 1198685892}
   m_Layer: 5
   m_Name: GameTitle
   m_TagString: Untagged
@@ -1778,7 +1824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Save the Earth
+  m_text: Save the Planet
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 28342b62413e5334a956c1a07c980aab, type: 2}
   m_sharedMaterial: {fileID: 2735835852122855048, guid: 28342b62413e5334a956c1a07c980aab, type: 2}
@@ -1855,6 +1901,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198685888}
   m_CullTransparentMesh: 1
+--- !u!114 &1198685892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198685888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u0421\u043F\u0430\u0441\u0438 \u041F\u043B\u0430\u043D\u0435\u0442\u0443"
+  en: Save the Planet
 --- !u!1 &1270054960
 GameObject:
   m_ObjectHideFlags: 0

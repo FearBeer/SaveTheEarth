@@ -9,21 +9,31 @@ public class Upgrade : MonoBehaviour
 {
     [SerializeField] private GameObject moreMoney;
     [SerializeField] private TextMeshProUGUI textMeshPro;
-    [SerializeField] private string product;
+    [SerializeField] private string ru_product;
+    [SerializeField] private string en_product;
     [SerializeField] private AudioClip upgradeComplete;
     [SerializeField] private AudioClip upgradeFail;
     private bool isUpgardeComplete;
+    private string product;
     private AudioSource audioSource;
     private Button button;
     public Action<int> valueChange;
 
-    private DataManger dataManger; 
+    private DataManger dataManger;
+    
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         button = GetComponent<Button>();
         dataManger = GameObject.Find("DataManager").GetComponent<DataManger>();
+        if (Language.Instance.currentLanguage == "en")
+        {
+            product = en_product;
+        } else
+        {
+            product = ru_product;
+        }
     }
     private void UpgradeProduct(int cost, Action<int> action)
     {

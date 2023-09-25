@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 54659069}
   - component: {fileID: 54659071}
   - component: {fileID: 54659070}
+  - component: {fileID: 54659072}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -271,6 +272,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54659068}
   m_CullTransparentMesh: 1
+--- !u!114 &54659072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54659068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u0412 \u043E\u0431\u0449\u0435\u043C, \u0442\u044B \u0442\u0435\u043F\u0435\u0440\u044C
+    \u0433\u0435\u0440\u043E\u0439 \u041E\u041F\u0410\u041D\u0410!!! \u0413\u043E\u0440\u0434\u0438\u0441\u044C!
+    \u041F\u043E\u043C\u043D\u0438\u043B \u0431\u044B \u0442\u044B, \u043E\u0442\u043A\u0443\u0434\u0430
+    \u043C\u044B \u0442\u0435\u0431\u044F \u0432\u044B\u0442\u0430\u0449\u0438\u043B\u0438,
+    \u043D\u043E \u0443\u0436\u0435 \u043D\u0435 \u0432\u0430\u0436\u043D\u043E.
+    \u041E\u0431\u0440\u0430\u0442\u043D\u043E \u0442\u044B \u043D\u0435 \u0434\u043E\u043B\u0435\u0442\u0438\u0448\u044C.
+    \u0421\u0442\u0430\u043D\u0446\u0438\u044F \u0441\u043C\u043E\u0436\u0435\u0442
+    \u043F\u0440\u043E\u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+    \u0435\u0449\u0451 \u0433\u043E\u0434\u0430 2. \u041D\u043E \u0432\u043E\u0442
+    \u0442\u043E\u043F\u043B\u0438\u0432\u0430 \u0434\u043E \u0417\u0435\u043C\u043B\u0438
+    \u0442\u0435\u0431\u0435 \u043D\u0435 \u0445\u0432\u0430\u0442\u0438\u0442 \u0442\u043E\u0447\u043D\u043E,
+    \u0417\u041E\u041C\u0411\u0418 \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u0434\u0430\u043B\u0435\u043A\u043E
+    \u043E\u0442 \u043D\u0430\u0441... \u0410\u0445, \u0434\u0430, \u0437\u0430\u0433\u043B\u044F\u043D\u0438
+    \u0432 \u043E\u0442\u0441\u0435\u043A 13. \u041E\u0442\u0431\u043E\u0439."
+  en: "In general, you are now a hero of OPANA!!! Be proud! You should remember where
+    we pulled you out from, but it doesn\u2019t matter anymore. You won't make it
+    back. The station will be able to function for another 2 years. But you definitely
+    won\u2019t have enough fuel to reach the Earth, ZOMBIES are too far from us...
+    Oh, yes, look into compartment 13. Lights out."
 --- !u!1 &118917137
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +512,7 @@ GameObject:
   - component: {fileID: 235015268}
   - component: {fileID: 235015270}
   - component: {fileID: 235015269}
+  - component: {fileID: 235015271}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -604,6 +637,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235015267}
   m_CullTransparentMesh: 1
+--- !u!114 &235015271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235015267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u041C\u0435\u043D\u044E"
+  en: Menu
 --- !u!1 &414044994
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +739,7 @@ GameObject:
   - component: {fileID: 469408832}
   - component: {fileID: 469408834}
   - component: {fileID: 469408833}
+  - component: {fileID: 469408835}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -828,6 +876,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469408831}
   m_CullTransparentMesh: 1
+--- !u!114 &469408835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469408831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u0422\u044B \u0441\u043F\u0440\u0430\u0432\u0438\u043B\u0441\u044F! \u041C\u044B
+    \u0441\u043F\u0430\u0441\u0435\u043D\u044B!!! \u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E,
+    \u043E \u0442\u0435\u0431\u0435 \u0442\u0430\u043A\u043E\u0433\u043E \u043D\u0435
+    \u0441\u043A\u0430\u0436\u0435\u0448\u044C. \u041D\u0435 \u0437\u043B\u0438\u0441\u044C,
+    \u0432\u0441\u0435 \u043E\u0448\u0438\u0431\u0430\u044E\u0442\u0441\u044F! \u0423
+    \u0441\u0430\u043C\u043E\u0433\u043E \u0441 1\u0433\u043E \u0440\u0430\u0437\u0430
+    \u0432\u0441\u0451 \u0432\u044B\u0448\u043B\u043E?! \u0412\u043E\u0442 \u0438
+    \u0433\u043E\u043B\u043E\u0432\u0430\u0441\u0442\u0438\u043A\u0438 \u043D\u0430\u0448\u0438
+    \u0447\u0435\u0433\u043E-\u0442\u043E \u0434\u0430 \u043D\u0435 \u043F\u043E\u0434\u0440\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u043B\u0438,
+    \u0434\u0430 \u0438 \u0441\u0430\u043C \u0442\u044B \u0432\u0438\u043D\u043E\u0432\u0430\u0442,
+    \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u0434\u0430\u043B\u0435\u043A\u043E
+    \u0443\u0432\u0451\u043B \u0441\u0442\u0430\u043D\u0446\u0438\u044E \u043E\u0442
+    \u043F\u043B\u0430\u043D\u0435\u0442\u044B!"
+  en: " You did it! We are saved!!! Unfortunately, the same cannot be said about
+    you. Don't be angry, everyone makes mistakes! Did everything work out the first
+    time?! So our tadpoles didn\u2019t calculate something, and it\u2019s your own
+    fault, you took the station too far from the planet!"
 --- !u!1 &658241800
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,6 +993,7 @@ GameObject:
   - component: {fileID: 714303065}
   - component: {fileID: 714303067}
   - component: {fileID: 714303066}
+  - component: {fileID: 714303068}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -1041,6 +1119,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714303064}
   m_CullTransparentMesh: 1
+--- !u!114 &714303068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714303064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u043D\u043E \u044D\u0442\u043E \u043D\u0435 \u0442\u043E\u0447\u043D\u043E
+    ;)"
+  en: but it is not exactly ;)
 --- !u!1 &838974574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,6 +2002,7 @@ GameObject:
   - component: {fileID: 1620217277}
   - component: {fileID: 1620217279}
   - component: {fileID: 1620217278}
+  - component: {fileID: 1620217280}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -2036,6 +2130,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620217276}
   m_CullTransparentMesh: 1
+--- !u!114 &1620217280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620217276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u0421\u043F\u0443\u0441\u0442\u044F \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u043E\u0435
+    \u0432\u0440\u0435\u043C\u044F...  ...\u0438\u0434\u0451\u0442 \u043F\u0440\u0438\u0451\u043C
+    \u0434\u0430\u043D\u043D\u044B\u0445...  ...\u0440\u0430\u0441\u0448\u0438\u0444\u0440\u043E\u0432\u043A\u0430... 
+    ...\u0432\u044B\u0432\u043E\u0434 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044E... "
+  en: ' Some time later...  ...data is being received...  ...transcript...  ...output
+    to the user...'
 --- !u!1 &1713579723
 GameObject:
   m_ObjectHideFlags: 0
@@ -2224,6 +2336,7 @@ GameObject:
   - component: {fileID: 1821999687}
   - component: {fileID: 1821999689}
   - component: {fileID: 1821999688}
+  - component: {fileID: 1821999690}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2348,6 +2461,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821999686}
   m_CullTransparentMesh: 1
+--- !u!114 &1821999690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821999686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u0412\u043F\u0435\u0440\u0451\u0434 >>"
+  en: Next >>
 --- !u!1 &1945919145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2647,6 +2774,7 @@ GameObject:
   - component: {fileID: 2010004343}
   - component: {fileID: 2010004345}
   - component: {fileID: 2010004344}
+  - component: {fileID: 2010004346}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2771,6 +2899,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010004342}
   m_CullTransparentMesh: 1
+--- !u!114 &2010004346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010004342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "<< \u041D\u0430\u0437\u0430\u0434"
+  en: << Back
 --- !u!1 &2046956236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3070,6 +3212,7 @@ GameObject:
   - component: {fileID: 2067776974}
   - component: {fileID: 2067776976}
   - component: {fileID: 2067776975}
+  - component: {fileID: 2067776977}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -3196,6 +3339,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067776973}
   m_CullTransparentMesh: 1
+--- !u!114 &2067776977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067776973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0435\u043D\u0438\u0435 \u0441\u043B\u0435\u0434\u0443\u0435\u0442..."
+  en: To be continued...
 --- !u!1 &2137628354
 GameObject:
   m_ObjectHideFlags: 0

@@ -179,7 +179,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moreMoney: {fileID: 1638514886}
   textMeshPro: {fileID: 668748298}
-  product: Reload Time
+  ru_product: "\u041F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0430
+    -0,1"
+  en_product: Reload -0,1
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
 --- !u!114 &73736713
@@ -428,7 +430,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moreMoney: {fileID: 1638514886}
   textMeshPro: {fileID: 527217758}
-  product: Station Speed
+  ru_product: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C +2"
+  en_product: Speed + 2
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
 --- !u!114 &240771907
@@ -1287,7 +1290,7 @@ SpriteRenderer:
   m_Size: {x: 8.14, y: 8.14}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &660159229
@@ -1864,7 +1867,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moreMoney: {fileID: 1638514886}
   textMeshPro: {fileID: 1737067119}
-  product: Fuel
+  ru_product: "\u0422\u043E\u043F\u043B\u0438\u0432\u043E"
+  en_product: Fuel
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
 --- !u!114 &960243655
@@ -2633,6 +2637,7 @@ GameObject:
   - component: {fileID: 1533688145}
   - component: {fileID: 1533688147}
   - component: {fileID: 1533688146}
+  - component: {fileID: 1533688148}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2757,6 +2762,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533688144}
   m_CullTransparentMesh: 1
+--- !u!114 &1533688148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533688144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u041C\u0435\u043D\u044E"
+  en: Menu
 --- !u!1 &1555835797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,7 +2928,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moreMoney: {fileID: 1638514886}
   textMeshPro: {fileID: 670706025}
-  product: Damage
+  ru_product: "\u0423\u0440\u043E\u043D + 1"
+  en_product: Damage + 1
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
 --- !u!114 &1555835801
@@ -3988,7 +4008,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moreMoney: {fileID: 1638514886}
   textMeshPro: {fileID: 1444955787}
-  product: Earth HP
+  ru_product: "\u041D\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0435 +1"
+  en_product: Population +1
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
 --- !u!114 &1820319869
@@ -4301,7 +4322,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -173, y: -553}
+  m_AnchoredPosition: {x: -192, y: -553}
   m_SizeDelta: {x: 320.652, y: 1006.17993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2002291857
@@ -4530,7 +4551,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moreMoney: {fileID: 1638514886}
   textMeshPro: {fileID: 1144167613}
-  product: Extra Life
+  ru_product: "\u0429\u0438\u0442 +1"
+  en_product: Shield +1
   upgradeComplete: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
   upgradeFail: {fileID: 8300000, guid: 8a1b5e8db998b0f46924babce75ebc8b, type: 3}
 --- !u!82 &2080131613

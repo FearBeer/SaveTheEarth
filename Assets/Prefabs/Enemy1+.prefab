@@ -101,12 +101,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f2d14e4243efa4982d73dc8eb5758f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 10
+  enemySpeed: 11
   timer: 1
-  damage: 2
+  damage: 1
   limitRangeSpeed: 2
   destroyParticle: {fileID: 5148197756687965331, guid: 5f6252247152bb54386931af3372068f, type: 3}
-  enemyCost: 40
+  enemyCost: 30
   enemyHealth: 1
 --- !u!50 &7532152971186905779
 Rigidbody2D:

@@ -18,13 +18,26 @@ public class BuyTicketToPlanet : MonoBehaviour
     private AudioSource audioSource;
     private TextMeshProUGUI fuel;
     private DataManger dataManger;
+    private string fuelName;
+    private string flyToPlanetName;
+
     void Start()
     {
+        if (Language.Instance.currentLanguage == "en")
+        {
+            fuelName = "Fuel";
+            flyToPlanetName = "Fly to planet";
+        }
+        else
+        {
+            fuelName = "Топливо";
+            flyToPlanetName = "Полёт к планете";
+        }
         fuel = GameObject.Find("Fuel").GetComponent<TextMeshProUGUI>();
         dataManger = GameObject.Find("DataManager").GetComponent<DataManger>();
         audioSource = GetComponent<AudioSource>();
-        fuel.text = $"Fuel: {DataManger.Instance.playerInfo.fuelCapacity}";
-        flyToPlanet.text = $"Fly to planet {id - notLevelScenCount}\n\n{cost}";
+        fuel.text = $"{fuelName}: {DataManger.Instance.playerInfo.fuelCapacity}";
+        flyToPlanet.text = $"{flyToPlanetName} {id - notLevelScenCount}\n\n{cost}";
     }
 
     public void FlyToPlanet()

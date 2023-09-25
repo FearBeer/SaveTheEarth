@@ -1053,7 +1053,7 @@ SpriteRenderer:
   m_Size: {x: 8.14, y: 8.14}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &660159229
@@ -2023,6 +2023,7 @@ GameObject:
   - component: {fileID: 1170226267}
   - component: {fileID: 1170226269}
   - component: {fileID: 1170226268}
+  - component: {fileID: 1170226270}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2147,6 +2148,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170226266}
   m_CullTransparentMesh: 1
+--- !u!114 &1170226270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170226266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ru: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
+  en: Shop
 --- !u!1 &1343567714
 GameObject:
   m_ObjectHideFlags: 0
