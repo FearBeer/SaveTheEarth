@@ -19,7 +19,6 @@ public class EnemyBehavouir : MonoBehaviour
     public int enemyCost = 10;
     public int enemyHealth = 1;
 
-
     void Start()
     {
         sounds = GameObject.Find("Sounds").GetComponent<SoundsPlay>();

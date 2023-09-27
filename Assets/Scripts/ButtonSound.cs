@@ -20,4 +20,10 @@ public class ButtonSound : MonoBehaviour
     {
         audioSource.PlayOneShot(clickSound);
     }
+
+    public void ChangeAudio(AudioClip clip)
+    {
+        AudioSystem.instance.ChangeTrack(clip);
+        AudioSystem.instance.PlayMusic();
+    }
 }

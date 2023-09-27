@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -103,4 +104,25 @@ public class ShopUpgradesUI : MonoBehaviour
             fuelCapacityCost.text = $"{fuelName}:\n\n {DataManger.Instance.playerInfo.fuelCapacityCost}";
         }
     }
+
+    [DllImport("__Internal")]
+    private static extern void RewardForVideo(int value);
+
+
+    public void ShowRewardVideo()
+    {
+        int rewardValue = 250;
+        //if (DataManger.Instance.playerInfo.fuelCapacity <= 3200)
+        //{
+        //    rewardValue = 250;
+        //} else if(DataManger.Instance.playerInfo.fuelCapacity <= 3200)
+        //{
+        //    rewardValue = 500;
+        //} else
+        //{
+        //    rewardValue = 1000;
+        //}
+        
+        RewardForVideo(rewardValue);
+    } 
 }

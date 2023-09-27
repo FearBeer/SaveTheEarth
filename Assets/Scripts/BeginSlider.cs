@@ -10,6 +10,8 @@ public class BeginSlider : MonoBehaviour
     private int currentIndex = 0;
     void Start()
     {
+        AudioSystem.instance.ChangeTrack(AudioSystem.instance.sounds[0]);
+        AudioSystem.instance.PlayMusic();
         slides = GameObject.FindGameObjectsWithTag("BeginSlide");
         backButton = GameObject.FindGameObjectWithTag("BackButton");
         nextButton = GameObject.FindGameObjectWithTag("NextButton");

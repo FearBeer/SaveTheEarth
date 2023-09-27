@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Runtime.InteropServices;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Yandex : MonoBehaviour
 {
 
-    //[DllImport("__Internal")]
-    //private static extern void Hello();
+    [DllImport("__Internal")]
+    private static extern void RateGame();
 
-
+    public void RateGameButton()
+    {
+        RateGame();
+    }
 }

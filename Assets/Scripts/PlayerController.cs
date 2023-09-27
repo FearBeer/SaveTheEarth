@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Button tryAgainButton;
     [SerializeField] private Button shopButton;
     [SerializeField] private AudioClip fireSound;
+    private Button rateButton;
     private EnemySpawner spawner;
     private Rigidbody2D rigidBody;
     private AudioSource audioSource;
@@ -18,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private float timeToFire = 0f;
     private int playerHealth;
     private int earthHealth;
-    
+
     public bool isGameActive;
     public int destroyedEneemies = 0;
 
@@ -27,9 +29,13 @@ public class PlayerController : MonoBehaviour
     public UnityEvent<float> OnTimeToFireCnahge;
 
     public GameObject projectilePrefab;
+   
     void Start()
     {
         isGameActive = true;
+        AudioSystem.instance.ChangeTrack(AudioSystem.instance.sounds[2]);               
+        AudioSystem.instance.PlayMusic();
+       
         playerHealth = DataManger.Instance.playerInfo.playerHealth;
         earthHealth = DataManger.Instance.playerInfo.earthHealth;
         reloadTime = DataManger.Instance.playerInfo.reloadTime;
@@ -37,6 +43,13 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         spawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
+        rateButton = GameObject.Find("Rate").GetComponent<Button>();
+        if (rateButton != null)
+        {
+            rateButton.gameObject.SetActive(false);
+        }
+
+
     }
 
     public int GetPlayerHealth()
@@ -129,6 +142,10 @@ public class PlayerController : MonoBehaviour
     public void GameOver()
     {
         isGameActive = false;
+        if(rateButton != null)
+        {
+            rateButton.gameObject.SetActive(true);
+        }
         tryAgainButton.gameObject.SetActive(true);
         shopButton.gameObject.SetActive(true);
     }

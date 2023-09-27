@@ -913,6 +913,7 @@ GameObject:
   - component: {fileID: 1300729923617543385}
   - component: {fileID: 1300729923617543384}
   - component: {fileID: 1300729923617543383}
+  - component: {fileID: 7987090115009804528}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -1035,6 +1036,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7987090115009804528}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: ChangeAudio
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 1afd1ae47c6af48c08a65b91f3a4adb4, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7987090115009804528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300729923617543381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c027d862c50e7204cbf7b8eb2e595e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 7e62d3e166cdd524194883aed374995c, type: 3}
+  clickSound: {fileID: 8300000, guid: 1a504153e74cd6a469888466f1920156, type: 3}
 --- !u!1 &1300729923680798279
 GameObject:
   m_ObjectHideFlags: 0
