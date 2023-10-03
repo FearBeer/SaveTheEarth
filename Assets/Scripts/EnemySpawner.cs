@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnEnemyCourutine()
     {
         int enemySpawned = enemyCount;
-        while(enemySpawned > 0 && playerController.isGameActive)
+        while(enemySpawned > 0 && DataManger.Instance.playerInfo.isGameActive)
         {
             yield return new WaitForSeconds(spawnInterval);
             enemySpawned--;

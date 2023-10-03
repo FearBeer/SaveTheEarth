@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class ButtonSound : MonoBehaviour
 {
-    [SerializeField] AudioClip hoverSound;
-    [SerializeField] AudioClip clickSound;
-    private AudioSource audioSource;
-
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
     public void HoverSound()
     {
-        audioSource.PlayOneShot(hoverSound);
+        AudioSystem.instance.PlaySound(AudioSystem.instance.buttonSounds[0], 1f);
     }
     public void ClickSound()
     {
-        audioSource.PlayOneShot(clickSound);
+        AudioSystem.instance.PlaySound(AudioSystem.instance.buttonSounds[1], 1f);
+    }
+
+    public void ChangeAudio(AudioClip clip)
+    {
+        AudioSystem.instance.ChangeTrack(clip);
+        AudioSystem.instance.PlayMusic();
     }
 }

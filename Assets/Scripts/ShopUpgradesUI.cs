@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class ShopUpgradesUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI playerSpeedCost;
     [SerializeField] private TextMeshProUGUI projectileDamageCost;
     [SerializeField] private TextMeshProUGUI fuelCapacityCost;
+    [SerializeField] private TextMeshProUGUI rewardTextValue;
 
     [SerializeField] private Button playerHPButton;
     [SerializeField] private Button earthHPButton;
@@ -18,65 +20,116 @@ public class ShopUpgradesUI : MonoBehaviour
     [SerializeField] private Button damageButton;
     [SerializeField] private Button fuelButton;
 
-    void Start()
+    private string playerHPName;
+    private string earthHPName;
+    private string reloadName;
+    private string speedName;
+    private string damageName;
+    private string fuelName;
+
+    void Awake()
     {
-        if(DataManger.Instance.isMaxPlayerHP)
+        if(Language.Instance.currentLanguage == "en")
         {
-            playerHPButton.interactable = false;
-            playerHPCost.text = $"Extra Life:\n\n Max";
+            playerHPName = "Shield +1";
+            earthHPName = "Population +1";
+            reloadName = "Reload -0,1";
+            speedName = "Speed +2";
+            damageName = "Damge +1";
+            fuelName = "Fuel";
         } else
         {
-            playerHPCost.text = $"Extra Life:\n\n {DataManger.Instance.playerHealthCost}";
+            playerHPName = "Щит +1";
+            earthHPName = "Население +1";
+            reloadName = "Перезарядка -0,1";
+            speedName = "Скорость +2";
+            damageName = "Урон +1";
+            fuelName = "Топливо";
         }
 
-        if (DataManger.Instance.isMaxEartHP)
+        rewardTextValue.text = $"+{DataManger.Instance.playerInfo.reward}";
+
+        if(DataManger.Instance.playerInfo.isMaxPlayerHP)
+        {
+            playerHPButton.interactable = false;
+            playerHPCost.text = $"{playerHPName}:\n\n Max";
+        } else
+        {
+            playerHPCost.text = $"{playerHPName}:\n\n {DataManger.Instance.playerInfo.playerHealthCost}";
+        }
+
+        if (DataManger.Instance.playerInfo.isMaxEartHP)
         {
             earthHPButton.interactable = false;
-            earthHPCost.text = $"Earth HP:\n\n Max";
+            earthHPCost.text = $"{earthHPName}:\n\n Max";
         }
         else
         {
-            earthHPCost.text = $"Earth HP:\n\n {DataManger.Instance.earthHealthCost}";
+            earthHPCost.text = $"{earthHPName}:\n\n {DataManger.Instance.playerInfo.earthHealthCost}";
         }
 
-        if (DataManger.Instance.isMinReloadTime)
+        if (DataManger.Instance.playerInfo.isMinReloadTime)
         {
             reloadButton.interactable = false;
-            reloadCost.text = $"Reload Time:\n\n Min";
+            reloadCost.text = $"{reloadName}:\n\n Min";
         }
         else
         {
-            reloadCost.text = $"Reload Time:\n\n {DataManger.Instance.reloadTimeCost}";
+            reloadCost.text = $"{reloadName}:\n\n {DataManger.Instance.playerInfo.reloadTimeCost}";
         }
 
-        if (DataManger.Instance.isMaxSpeed)
+        if (DataManger.Instance.playerInfo.isMaxSpeed)
         {
             speedButton.interactable = false;
-            playerSpeedCost.text = $"Speed:\n\n Max";
+            playerSpeedCost.text = $"{speedName}:\n\n Max";
         }
         else
         {
-            playerSpeedCost.text = $"Speed:\n\n {DataManger.Instance.playerSpeedCost}";
+            playerSpeedCost.text = $"{speedName}:\n\n {DataManger.Instance.playerInfo.playerSpeedCost}";
         }
         
-        if (DataManger.Instance.isMaxDamage)
+        if (DataManger.Instance.playerInfo.isMaxDamage)
         {
             damageButton.interactable = false;
-            projectileDamageCost.text = $"Damage:\n\n Max";
+            projectileDamageCost.text = $"{damageName}:\n\n Max";
         }
         else
         {
-            projectileDamageCost.text = $"Damage:\n\n {DataManger.Instance.projectileDamageCost}";
+            projectileDamageCost.text = $"{damageName}:\n\n {DataManger.Instance.playerInfo.projectileDamageCost}";
         }
 
-        if (DataManger.Instance.isMaxFuel)
+        if (DataManger.Instance.playerInfo.isMaxFuel)
         {
             fuelButton.interactable = false;
-            fuelCapacityCost.text = $"Fuel:\n\n Max";
+            fuelCapacityCost.text = $"{fuelName}:\n\n Max";
         }
         else
         {
-            fuelCapacityCost.text = $"Fuel:\n\n {DataManger.Instance.fuelCapacityCost}";
+            fuelCapacityCost.text = $"{fuelName}:\n\n {DataManger.Instance.playerInfo.fuelCapacityCost}";
         }
     }
+
+    [DllImport("__Internal")]
+    private static extern void RewardForVideo(int value);
+
+
+    public void ShowRewardVideo()
+    {
+        if (DataManger.Instance.playerInfo.fuelCapacity <= 1600)
+        {
+            DataManger.Instance.playerInfo.reward = 250;
+        }
+        else if (DataManger.Instance.playerInfo.fuelCapacity <= 6400)
+        {
+            DataManger.Instance.playerInfo.reward = 500;
+        }
+        else
+        {
+            DataManger.Instance.playerInfo.reward = 1000;
+        }
+
+        rewardTextValue.text = $"+{DataManger.Instance.playerInfo.reward}";
+
+        RewardForVideo(DataManger.Instance.playerInfo.reward);
+    } 
 }

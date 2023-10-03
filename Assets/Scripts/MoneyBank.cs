@@ -8,7 +8,7 @@ public class MoneyBank : MonoBehaviour
     public UnityEvent<int> OnMoneyChange;
     void Start()
     {
-        allMoney = DataManger.Instance.money;
+        allMoney = DataManger.Instance.playerInfo.money;
     }
 
     public int GetAllMoneyValue()
@@ -21,6 +21,6 @@ public class MoneyBank : MonoBehaviour
     {
         allMoney += value;
         OnMoneyChange.Invoke(allMoney);
-        DataManger.Instance.money = allMoney;
+        DataManger.Instance.playerInfo.money = allMoney;
     }
 }

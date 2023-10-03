@@ -12,24 +12,23 @@ public class EnemyBehavouir : MonoBehaviour
     private Rigidbody2D rigidBody;
     private PlayerController playerController;
     private MoneyBank moneyBank;
-    private SoundsPlay sounds;
+    //private SoundsPlay sounds;
     private DataManger dataManger;
     private float timeToChangeSpeed;
     
     public int enemyCost = 10;
     public int enemyHealth = 1;
 
-
     void Start()
     {
-        sounds = GameObject.Find("Sounds").GetComponent<SoundsPlay>();
+        //sounds = GameObject.Find("Sounds").GetComponent<SoundsPlay>();
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
         dataManger = GameObject.Find("DataManager").GetComponent<DataManger>();
         moneyBank = GameObject.Find("MoneyBank").GetComponent<MoneyBank>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         Movement();
     }
@@ -66,7 +65,8 @@ public class EnemyBehavouir : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            sounds.ColissionStationSound();
+            AudioSystem.instance.PlaySound(AudioSystem.instance.playersSounds[0], 0.5f);
+            //sounds.ColissionStationSound();
             timeToChangeSpeed = timer;
             StartCoroutine(TimerRoutine(2));
             playerController.TakePlayerDamage(damage);
@@ -81,7 +81,8 @@ public class EnemyBehavouir : MonoBehaviour
         if (gameObject.tag == "Enemy" && collision.gameObject.tag == "Earth")
         {
             playerController.TakeEarthDamage(damage);
-            sounds.EarthCrashSound();
+            AudioSystem.instance.PlaySound(AudioSystem.instance.playersSounds[1], 0.5f);
+            //sounds.EarthCrashSound();
             playerController.destroyedEneemies++;
             Destroy(gameObject);
         }
@@ -98,10 +99,11 @@ public class EnemyBehavouir : MonoBehaviour
         if (collision.gameObject.tag == "PlayerProjectile")
         {
             Destroy(collision.gameObject);
-            enemyHealth -= DataManger.Instance.projectileDamage;
+            enemyHealth -= DataManger.Instance.playerInfo.projectileDamage;
             if (enemyHealth < 1)
             {
-                sounds.DestroyEnemySound();
+                AudioSystem.instance.PlaySound(AudioSystem.instance.playersSounds[2], 0.5f);
+                //sounds.DestroyEnemySound();
                 moneyBank.ChangeMoneyValue(Mathf.CeilToInt(enemyCost * DataManger.Instance.moneyRate));
                 dataManger.Save();
                 Instantiate(destroyParticle, transform.position, Quaternion.identity);

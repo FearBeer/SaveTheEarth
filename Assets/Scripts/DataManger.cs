@@ -1,34 +1,50 @@
-using System;
 using UnityEngine;
-using System.IO;
+using System.Runtime.InteropServices;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
-public class DataManger : MonoBehaviour
+[System.Serializable]
+public class SaveData
 {
-    public static DataManger Instance;
     public int playerHealth;
     public int playerHealthCost;
     public int earthHealth;
     public int earthHealthCost;
     public float reloadTime;
     public int reloadTimeCost;
-    public int projectileDamage;
-    public int projectileDamageCost;
     public float playerSpeed;
     public int playerSpeedCost;
+    public int projectileDamage;
+    public int projectileDamageCost;
     public int money;
-    public float moneyRate;
     public int fuelCapacity;
     public int fuelCapacityCost;
-    
+
     public bool isMaxPlayerHP;
     public bool isMaxEartHP;
     public bool isMinReloadTime;
     public bool isMaxDamage;
     public bool isMaxSpeed;
     public bool isMaxFuel;
+
+    public int countOfDeath;
+    public int reward;
+
+    public bool isGameActive;
+}
+
+public class DataManger : MonoBehaviour
+{
+    public SaveData playerInfo;
+    public static DataManger Instance;
+    public float moneyRate;
+
+    private Button[] buttons;    
     private void Awake()
     {
-        if(Instance != null)
+        
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
@@ -36,88 +52,63 @@ public class DataManger : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            Load();
+            LoadExternal();
         }
     }
 
-    [Serializable] class SaveData
-    {
-        public int playerHealth;
-        public int playerHealthCost;
-        public int earthHealth;
-        public int earthHealthCost;
-        public float reloadTime;
-        public int reloadTimeCost;
-        public float playerSpeed;
-        public int playerSpeedCost;
-        public int projectileDamage;
-        public int projectileDamageCost;
-        public int money;
-        public int fuelCapacity;
-        public int fuelCapacityCost;
+    [DllImport("__Internal")]
+    private static extern void SaveExternal(string data);
 
-        public bool isMaxPlayerHP;
-        public bool isMaxEartHP;
-        public bool isMinReloadTime;
-        public bool isMaxDamage;
-        public bool isMaxSpeed;
-        public bool isMaxFuel;
-    }
+    [DllImport("__Internal")]
+    private static extern void LoadExternal();
 
     public void Save()
     {
-        SaveData data = new SaveData();
-        data.playerHealth = playerHealth;
-        data.playerHealthCost = playerHealthCost;
-        data.earthHealth = earthHealth;
-        data.earthHealthCost = earthHealthCost;
-        data.reloadTime = reloadTime;
-        data.reloadTimeCost = reloadTimeCost;
-        data.playerSpeed = playerSpeed;
-        data.playerSpeedCost = playerSpeedCost;
-        data.projectileDamage = projectileDamage;
-        data.projectileDamageCost = projectileDamageCost;
-        data.money = money;
-        data.fuelCapacity = fuelCapacity;
-        data.fuelCapacityCost = fuelCapacityCost;
-        data.isMaxPlayerHP = isMaxPlayerHP;
-        data.isMaxEartHP = isMaxEartHP;
-        data.isMinReloadTime = isMinReloadTime;
-        data.isMaxDamage = isMaxDamage;
-        data.isMaxSpeed = isMaxSpeed;
-        data.isMaxFuel = isMaxFuel;
-
-        string json = JsonUtility.ToJson(data);
-
-        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        string json = JsonUtility.ToJson(playerInfo);
+        SaveExternal(json);
     }
-    public void Load()
-    {
-        string path = Application.persistentDataPath + "/savefile.json";
-        if (File.Exists(path))
-        {
-            string json = File.ReadAllText(path);
-            SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-            playerHealth = data.playerHealth;
-            playerHealthCost = data.playerHealthCost;
-            earthHealth = data.earthHealth;
-            earthHealthCost = data.earthHealthCost;
-            reloadTime = data.reloadTime;
-            reloadTimeCost = data.reloadTimeCost;
-            playerSpeed = data.playerSpeed;
-            playerSpeedCost = data.playerSpeedCost;
-            projectileDamage = data.projectileDamage;
-            projectileDamageCost = data.projectileDamageCost;
-            money = data.money;
-            fuelCapacity = data.fuelCapacity;
-            fuelCapacityCost = data.fuelCapacityCost;
-            isMaxPlayerHP = data.isMaxPlayerHP;
-            isMaxEartHP = data.isMaxEartHP;
-            isMinReloadTime = data.isMinReloadTime;
-            isMaxDamage = data.isMaxDamage;
-            isMaxSpeed = data.isMaxSpeed;
-            isMaxFuel = data.isMaxFuel;
+    public void PauseGame()
+    {
+        buttons = FindObjectsOfType<Button>();
+        foreach (Button button in buttons)
+        {
+            button.gameObject.SetActive(false);
+        }
+        playerInfo.isGameActive = false;
+        Time.timeScale = 0;
+        AudioSystem.instance.PauseMusic();
+    }
+
+    public void ResumeGame()
+    {
+        foreach (Button button in buttons)
+        {
+            button.gameObject.SetActive(true);
+        }
+        Time.timeScale = 1;
+        AudioSystem.instance.PlayMusic();
+        playerInfo.isGameActive = true;
+    }
+
+    public void GiveReward()
+    {
+        playerInfo.money += 250;
+        Save();
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void Load(string value)
+    {        
+        if(value == "{}")
+        {
+            Save();
+        } else
+        {
+            playerInfo = JsonUtility.FromJson<SaveData>(value);
         }
     }
 }

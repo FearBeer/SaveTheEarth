@@ -9,28 +9,34 @@ public class Upgrade : MonoBehaviour
 {
     [SerializeField] private GameObject moreMoney;
     [SerializeField] private TextMeshProUGUI textMeshPro;
-    [SerializeField] private string product;
-    [SerializeField] private AudioClip upgradeComplete;
-    [SerializeField] private AudioClip upgradeFail;
+    [SerializeField] private string ru_product;
+    [SerializeField] private string en_product;
     private bool isUpgardeComplete;
-    private AudioSource audioSource;
+    private string product;
     private Button button;
     public Action<int> valueChange;
 
-    private DataManger dataManger; 
+    private DataManger dataManger;
+    
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         button = GetComponent<Button>();
         dataManger = GameObject.Find("DataManager").GetComponent<DataManger>();
+        if (Language.Instance.currentLanguage == "en")
+        {
+            product = en_product;
+        } else
+        {
+            product = ru_product;
+        }
     }
     private void UpgradeProduct(int cost, Action<int> action)
     {
-        if (DataManger.Instance.money >= cost)
+        if (DataManger.Instance.playerInfo.money >= cost)
         {
             isUpgardeComplete = true;
-            DataManger.Instance.money -= cost;
+            DataManger.Instance.playerInfo.money -= cost;
             action?.Invoke(cost);
             dataManger.Save();
         }
@@ -45,31 +51,31 @@ public class Upgrade : MonoBehaviour
     public void changePlayerHealth(int cost)
     {
         int limit = 50;
-        if(DataManger.Instance.playerHealth < limit -1)
+        if(DataManger.Instance.playerInfo.playerHealth < limit -1)
         {
-            cost = DataManger.Instance.playerHealthCost;
-            DataManger.Instance.playerHealth++;
-            if(DataManger.Instance.playerHealth <= 10)
+            cost = DataManger.Instance.playerInfo.playerHealthCost;
+            DataManger.Instance.playerInfo.playerHealth++;
+            if(DataManger.Instance.playerInfo.playerHealth <= 10)
             {
                 cost += 100;
-            } else if (DataManger.Instance.playerHealth <= 20)
+            } else if (DataManger.Instance.playerInfo.playerHealth <= 20)
             {
                 cost += 1000;
             } else
             {
                 cost += 5000;
             }
-            DataManger.Instance.playerHealthCost = cost;
+            DataManger.Instance.playerInfo.playerHealthCost = cost;
             textMeshPro.text = $"{product}:\n\n{cost}";
-        } else if(DataManger.Instance.playerHealth == limit - 1)
+        } else if(DataManger.Instance.playerInfo.playerHealth == limit - 1)
         {
-            DataManger.Instance.playerHealth += 1;
-            DataManger.Instance.isMaxPlayerHP = true;
+            DataManger.Instance.playerInfo.playerHealth += 1;
+            DataManger.Instance.playerInfo.isMaxPlayerHP = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMax";
         } else
         {
-            DataManger.Instance.isMaxPlayerHP = true;
+            DataManger.Instance.playerInfo.isMaxPlayerHP = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMax";
         }
@@ -77,40 +83,40 @@ public class Upgrade : MonoBehaviour
 
     public void UpgradePlayerHealth()
     {
-        UpgradeProduct(DataManger.Instance.playerHealthCost, changePlayerHealth);
+        UpgradeProduct(DataManger.Instance.playerInfo.playerHealthCost, changePlayerHealth);
     }
 
     public void changeEarthHealth(int cost)
     {
         int limit = 50;
-        if(DataManger.Instance.earthHealth < limit - 1)
+        if(DataManger.Instance.playerInfo.earthHealth < limit - 1)
         {
-            cost = DataManger.Instance.earthHealthCost;
-            DataManger.Instance.earthHealth++;
-            if(DataManger.Instance.earthHealth <= 10)
+            cost = DataManger.Instance.playerInfo.earthHealthCost;
+            DataManger.Instance.playerInfo.earthHealth++;
+            if(DataManger.Instance.playerInfo.earthHealth <= 10)
             {
                 cost += 150;
-            } else if (DataManger.Instance.earthHealth <= 20)
+            } else if (DataManger.Instance.playerInfo.earthHealth <= 20)
             {
                 cost += 1500;
-            } else if (DataManger.Instance.earthHealth <= 30)
+            } else if (DataManger.Instance.playerInfo.earthHealth <= 30)
             {
                 cost += 3000;
             } else
             {
                 cost += 10000;
             }
-            DataManger.Instance.earthHealthCost = cost;
+            DataManger.Instance.playerInfo.earthHealthCost = cost;
             textMeshPro.text = $"{product}:\n\n{cost}";
-        } else if(DataManger.Instance.earthHealth == limit - 1)
+        } else if(DataManger.Instance.playerInfo.earthHealth == limit - 1)
         {
-            DataManger.Instance.earthHealth += 1;
-            DataManger.Instance.isMaxEartHP = true;
+            DataManger.Instance.playerInfo.earthHealth += 1;
+            DataManger.Instance.playerInfo.isMaxEartHP = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMax";
         } else
         {
-            DataManger.Instance.isMaxEartHP = true;
+            DataManger.Instance.playerInfo.isMaxEartHP = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMax";
         }
@@ -118,17 +124,17 @@ public class Upgrade : MonoBehaviour
 
     public void UpgradeEarthHealth()
     {
-        UpgradeProduct(DataManger.Instance.earthHealthCost, changeEarthHealth);
+        UpgradeProduct(DataManger.Instance.playerInfo.earthHealthCost, changeEarthHealth);
     }
 
     public void changeReloadTime(int cost)
     {
         float limit = 0.1f;
-        if (DataManger.Instance.reloadTime > limit + 0.1f)
+        if (DataManger.Instance.playerInfo.reloadTime > limit + 0.1f)
         {
-            cost = DataManger.Instance.reloadTimeCost;
-            DataManger.Instance.reloadTime -= 0.1f;
-            if (DataManger.Instance.reloadTime >= 1.5f)
+            cost = DataManger.Instance.playerInfo.reloadTimeCost;
+            DataManger.Instance.playerInfo.reloadTime -= 0.1f;
+            if (DataManger.Instance.playerInfo.reloadTime >= 1.5f)
             {
                 cost *= 2;
             }
@@ -136,87 +142,87 @@ public class Upgrade : MonoBehaviour
             {
                 cost += 5000;
             }
-            DataManger.Instance.reloadTimeCost = cost;
+            DataManger.Instance.playerInfo.reloadTimeCost = cost;
             textMeshPro.text = $"{product}:\n\n{cost}";
         }
-        else if (DataManger.Instance.reloadTime <= limit + 0.1f)
+        else if (DataManger.Instance.playerInfo.reloadTime <= limit + 0.1f)
         {
-            DataManger.Instance.reloadTime -= 0.1f;
-            DataManger.Instance.isMinReloadTime = true;
+            DataManger.Instance.playerInfo.reloadTime -= 0.1f;
+            DataManger.Instance.playerInfo.isMinReloadTime = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMin";
         }
         else
         {
-            DataManger.Instance.isMinReloadTime = true;
+            DataManger.Instance.playerInfo.isMinReloadTime = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMin";
         }
     }
     public void UpgradeReloadTime()
     {
-        UpgradeProduct(DataManger.Instance.reloadTimeCost, changeReloadTime);
+        UpgradeProduct(DataManger.Instance.playerInfo.reloadTimeCost, changeReloadTime);
     }
 
     public void changePlayerSpeed(int cost)
     {
         int limit = 90;
-        if(DataManger.Instance.playerSpeed < limit - 2)
+        if(DataManger.Instance.playerInfo.playerSpeed < limit - 2)
         {
-            cost = DataManger.Instance.playerSpeedCost;
-            DataManger.Instance.playerSpeed += 2.0f;
-            if(DataManger.Instance.playerSpeed <= 60)
+            cost = DataManger.Instance.playerInfo.playerSpeedCost;
+            DataManger.Instance.playerInfo.playerSpeed += 2.0f;
+            if(DataManger.Instance.playerInfo.playerSpeed <= 60)
             {
                 cost += 250;
-            } else if (DataManger.Instance.playerSpeed <= 70)
+            } else if (DataManger.Instance.playerInfo.playerSpeed <= 70)
             {
                 cost += 500;
-            } else if (DataManger.Instance.playerSpeed <= 80)
+            } else if (DataManger.Instance.playerInfo.playerSpeed <= 80)
             {
                 cost += 1000;
             } else
             {
                 cost += 5000;
             }
-            DataManger.Instance.playerSpeedCost = cost;
+            DataManger.Instance.playerInfo.playerSpeedCost = cost;
             textMeshPro.text = $"{product}:\n\n{cost}";
-        } else if(DataManger.Instance.playerSpeed == limit - 2)
+        } else if(DataManger.Instance.playerInfo.playerSpeed == limit - 2)
         {
-            DataManger.Instance.playerSpeed += 2.0f;
-            DataManger.Instance.isMaxSpeed = true;
+            DataManger.Instance.playerInfo.playerSpeed += 2.0f;
+            DataManger.Instance.playerInfo.isMaxSpeed = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMax";
         } else
         {
-            DataManger.Instance.isMaxSpeed = true;
+            DataManger.Instance.playerInfo.isMaxSpeed = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMax";
         }
     }
     public void UpgradePlayerSpeed()
     {
-        UpgradeProduct(DataManger.Instance.playerSpeedCost, changePlayerSpeed);
+        UpgradeProduct(DataManger.Instance.playerInfo.playerSpeedCost, changePlayerSpeed);
     }
 
     public void changeProjectileDamage(int cost)
     {
         int maxDamage = 5;
-        if (DataManger.Instance.projectileDamage < maxDamage - 1)
+        if (DataManger.Instance.playerInfo.projectileDamage < maxDamage - 1)
         {
-            cost = DataManger.Instance.projectileDamageCost;
-            DataManger.Instance.projectileDamage += 1;
+            cost = DataManger.Instance.playerInfo.projectileDamageCost;
+            DataManger.Instance.playerInfo.projectileDamage += 1;
             cost *= 4;
-            DataManger.Instance.projectileDamageCost = cost;
+            DataManger.Instance.playerInfo.projectileDamageCost = cost;
             textMeshPro.text = $"{product}:\n\n{cost}";
-        } else if (DataManger.Instance.projectileDamage == maxDamage - 1)
+        } else if (DataManger.Instance.playerInfo.projectileDamage == maxDamage - 1)
         {
-            DataManger.Instance.projectileDamage += 1;
-            DataManger.Instance.isMaxDamage = true;
+            DataManger.Instance.playerInfo.projectileDamage += 1;
+            DataManger.Instance.playerInfo.isMaxDamage = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMax";
         } else
         {
-            DataManger.Instance.isMaxDamage = true;
+            DataManger.Instance.playerInfo.isMaxDamage = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMax";
         }
@@ -224,28 +230,28 @@ public class Upgrade : MonoBehaviour
 
     public void UpgradeProjectileDamage()
     {
-        UpgradeProduct(DataManger.Instance.projectileDamageCost, changeProjectileDamage);
+        UpgradeProduct(DataManger.Instance.playerInfo.projectileDamageCost, changeProjectileDamage);
     }
 
     public void changeFuelCapacity(int cost)
     {
         int limit = 25600;
-        if(DataManger.Instance.fuelCapacity < limit / 2)
+        if(DataManger.Instance.playerInfo.fuelCapacity < limit / 2)
         {
-            cost = DataManger.Instance.fuelCapacityCost;
-            DataManger.Instance.fuelCapacity *= 2;
+            cost = DataManger.Instance.playerInfo.fuelCapacityCost;
+            DataManger.Instance.playerInfo.fuelCapacity *= 2;
             cost *= 2;
-            DataManger.Instance.fuelCapacityCost = cost;
+            DataManger.Instance.playerInfo.fuelCapacityCost = cost;
             textMeshPro.text = $"{product}:\n\n{cost}";        
-        } else if(DataManger.Instance.fuelCapacity == limit / 2)
+        } else if(DataManger.Instance.playerInfo.fuelCapacity == limit / 2)
         {
-            DataManger.Instance.fuelCapacity *= 2;
-            DataManger.Instance.isMaxFuel = true;
+            DataManger.Instance.playerInfo.fuelCapacity *= 2;
+            DataManger.Instance.playerInfo.isMaxFuel = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMax";
         } else
         {
-            DataManger.Instance.isMaxFuel = true;
+            DataManger.Instance.playerInfo.isMaxFuel = true;
             button.interactable = false;
             textMeshPro.text = $"{product}:\n\nMax";
         }
@@ -253,7 +259,7 @@ public class Upgrade : MonoBehaviour
 
     public void UpgradeFuelCapacity()
     {
-        UpgradeProduct(DataManger.Instance.fuelCapacityCost, changeFuelCapacity);
+        UpgradeProduct(DataManger.Instance.playerInfo.fuelCapacityCost, changeFuelCapacity);
     }
 
     IEnumerator timerRoutine()
@@ -267,11 +273,11 @@ public class Upgrade : MonoBehaviour
     {
         if (isUpgardeComplete)
         {
-            audioSource.PlayOneShot(upgradeComplete, 1.0f);
+            AudioSystem.instance.PlaySound(AudioSystem.instance.buttonSounds[1], 1.0f);
         }
         else
         {
-            audioSource.PlayOneShot(upgradeFail, 1.0f);
+            AudioSystem.instance.PlaySound(AudioSystem.instance.buttonSounds[2], 1.0f);
         }
     }
 }
