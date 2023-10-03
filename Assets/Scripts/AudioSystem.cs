@@ -1,12 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioSystem : MonoBehaviour
 {
+    [Header("Background Music")]
     public AudioClip[] sounds;
+    [Header("Other sounds")]
+    public AudioClip[] playersSounds;
+    [Header("Button sounds")]
+    public AudioClip[] buttonSounds;
     public static AudioSystem instance;
-    public bool isPaused = false;
     private AudioSource audioSource => GetComponent<AudioSource>();
 
     private void Start()
@@ -39,6 +41,6 @@ public class AudioSystem : MonoBehaviour
 
     public void PauseMusic()
     {
-        audioSource.Pause();
+        audioSource.Stop();
     }
 }

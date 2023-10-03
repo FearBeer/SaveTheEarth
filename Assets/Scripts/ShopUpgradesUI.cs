@@ -11,6 +11,7 @@ public class ShopUpgradesUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI playerSpeedCost;
     [SerializeField] private TextMeshProUGUI projectileDamageCost;
     [SerializeField] private TextMeshProUGUI fuelCapacityCost;
+    [SerializeField] private TextMeshProUGUI rewardTextValue;
 
     [SerializeField] private Button playerHPButton;
     [SerializeField] private Button earthHPButton;
@@ -45,6 +46,9 @@ public class ShopUpgradesUI : MonoBehaviour
             damageName = "Урон +1";
             fuelName = "Топливо";
         }
+
+        rewardTextValue.text = $"+{DataManger.Instance.playerInfo.reward}";
+
         if(DataManger.Instance.playerInfo.isMaxPlayerHP)
         {
             playerHPButton.interactable = false;
@@ -111,18 +115,21 @@ public class ShopUpgradesUI : MonoBehaviour
 
     public void ShowRewardVideo()
     {
-        int rewardValue = 250;
-        //if (DataManger.Instance.playerInfo.fuelCapacity <= 3200)
-        //{
-        //    rewardValue = 250;
-        //} else if(DataManger.Instance.playerInfo.fuelCapacity <= 3200)
-        //{
-        //    rewardValue = 500;
-        //} else
-        //{
-        //    rewardValue = 1000;
-        //}
-        
-        RewardForVideo(rewardValue);
+        if (DataManger.Instance.playerInfo.fuelCapacity <= 1600)
+        {
+            DataManger.Instance.playerInfo.reward = 250;
+        }
+        else if (DataManger.Instance.playerInfo.fuelCapacity <= 6400)
+        {
+            DataManger.Instance.playerInfo.reward = 500;
+        }
+        else
+        {
+            DataManger.Instance.playerInfo.reward = 1000;
+        }
+
+        rewardTextValue.text = $"+{DataManger.Instance.playerInfo.reward}";
+
+        RewardForVideo(DataManger.Instance.playerInfo.reward);
     } 
 }

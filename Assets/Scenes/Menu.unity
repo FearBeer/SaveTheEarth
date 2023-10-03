@@ -1817,8 +1817,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 521, y: -88}
-  m_SizeDelta: {x: 900, y: 96}
+  m_AnchoredPosition: {x: 812.6499, y: -88}
+  m_SizeDelta: {x: 1485.94, y: 96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198685890
 MonoBehaviour:
@@ -1840,7 +1840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Save the Planet
+  m_text: "\u041F\u0440\u043E\u0435\u043A\u0442 \u0417\u0435\u043C\u043B\u044F \"0\""
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 28342b62413e5334a956c1a07c980aab, type: 2}
   m_sharedMaterial: {fileID: 2735835852122855048, guid: 28342b62413e5334a956c1a07c980aab, type: 2}
@@ -1874,7 +1874,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1929,8 +1929,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84b771e397e97f4f928a7514c21c201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ru: "\u0421\u043F\u0430\u0441\u0438 \u041F\u043B\u0430\u043D\u0435\u0442\u0443"
-  en: Save the Planet
+  ru: "\u041F\u0440\u043E\u0435\u043A\u0442 \u0417\u0435\u043C\u043B\u044F \"0\""
+  en: Project Zone "0"
 --- !u!1 &1270054960
 GameObject:
   m_ObjectHideFlags: 0

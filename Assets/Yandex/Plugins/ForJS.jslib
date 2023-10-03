@@ -7,10 +7,12 @@ mergeInto(LibraryManager.library, {
   },
 
   LoadExternal: function() {
-    player.getData().then(data => {
-        const JSONFromGame = JSON.stringify(data);
-        gameInstance.SendMessage('DataManager', 'Load', JSONFromGame);
-    });
+    if(player) {
+      player.getData().then(data => {
+          const JSONFromGame = JSON.stringify(data);
+          gameInstance.SendMessage('DataManager', 'Load', JSONFromGame);
+      });
+    }
   },
 
   RateGame: function() {
@@ -58,7 +60,7 @@ mergeInto(LibraryManager.library, {
     ysdk.adv.showRewardedVideo({
     callbacks: {
         onOpen: () => {
-          console.log('Video ad open.');
+          console.log('Video ad open.');          
           gameInstance.SendMessage('DataManager', 'PauseGame');
         },
         onRewarded: () => {

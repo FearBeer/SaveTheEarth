@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Runtime.InteropServices;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class SaveData
@@ -28,6 +29,9 @@ public class SaveData
     public bool isMaxFuel;
 
     public int countOfDeath;
+    public int reward;
+
+    public bool isGameActive;
 }
 
 public class DataManger : MonoBehaviour
@@ -35,9 +39,12 @@ public class DataManger : MonoBehaviour
     public SaveData playerInfo;
     public static DataManger Instance;
     public float moneyRate;
+
+    private Button[] buttons;    
     private void Awake()
     {
-        if(Instance != null)
+        
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
@@ -63,14 +70,25 @@ public class DataManger : MonoBehaviour
 
     public void PauseGame()
     {
+        buttons = FindObjectsOfType<Button>();
+        foreach (Button button in buttons)
+        {
+            button.gameObject.SetActive(false);
+        }
+        playerInfo.isGameActive = false;
         Time.timeScale = 0;
         AudioSystem.instance.PauseMusic();
     }
 
     public void ResumeGame()
     {
+        foreach (Button button in buttons)
+        {
+            button.gameObject.SetActive(true);
+        }
         Time.timeScale = 1;
         AudioSystem.instance.PlayMusic();
+        playerInfo.isGameActive = true;
     }
 
     public void GiveReward()

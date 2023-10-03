@@ -11,11 +11,8 @@ public class Upgrade : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textMeshPro;
     [SerializeField] private string ru_product;
     [SerializeField] private string en_product;
-    [SerializeField] private AudioClip upgradeComplete;
-    [SerializeField] private AudioClip upgradeFail;
     private bool isUpgardeComplete;
     private string product;
-    private AudioSource audioSource;
     private Button button;
     public Action<int> valueChange;
 
@@ -24,7 +21,6 @@ public class Upgrade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         button = GetComponent<Button>();
         dataManger = GameObject.Find("DataManager").GetComponent<DataManger>();
         if (Language.Instance.currentLanguage == "en")
@@ -277,11 +273,11 @@ public class Upgrade : MonoBehaviour
     {
         if (isUpgardeComplete)
         {
-            audioSource.PlayOneShot(upgradeComplete, 1.0f);
+            AudioSystem.instance.PlaySound(AudioSystem.instance.buttonSounds[1], 1.0f);
         }
         else
         {
-            audioSource.PlayOneShot(upgradeFail, 1.0f);
+            AudioSystem.instance.PlaySound(AudioSystem.instance.buttonSounds[2], 1.0f);
         }
     }
 }
