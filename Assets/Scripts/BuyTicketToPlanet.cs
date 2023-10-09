@@ -7,15 +7,12 @@ public class BuyTicketToPlanet : MonoBehaviour
 {
     [SerializeField] private GameObject moreMoney;
     [SerializeField] private TextMeshProUGUI flyToPlanet;
-    [SerializeField] private AudioClip upgradeComplete;
-    [SerializeField] private AudioClip upgradeFail;
     [SerializeField] private float moneyRate;
     [SerializeField] private int cost;
     [SerializeField] private int id;
 
     private bool isFuelEnough;
     private int notLevelScenCount = 4;
-    private AudioSource audioSource;
     private TextMeshProUGUI fuel;
     private DataManger dataManger;
     private string fuelName;
@@ -35,7 +32,6 @@ public class BuyTicketToPlanet : MonoBehaviour
         }
         fuel = GameObject.Find("Fuel").GetComponent<TextMeshProUGUI>();
         dataManger = GameObject.Find("DataManager").GetComponent<DataManger>();
-        audioSource = GetComponent<AudioSource>();
         fuel.text = $"{fuelName}: {DataManger.Instance.playerInfo.fuelCapacity}";
         flyToPlanet.text = $"{flyToPlanetName} {id - notLevelScenCount}\n\n{cost}";
     }
@@ -72,11 +68,11 @@ public class BuyTicketToPlanet : MonoBehaviour
     {
         if (isFuelEnough)
         {
-            audioSource.PlayOneShot(upgradeComplete, 1.0f);
+            AudioSystem.instance.PlaySound(AudioSystem.instance.buttonSounds[1], 1.0f);
         }
         else
         {
-            audioSource.PlayOneShot(upgradeFail, 1.0f);
+            AudioSystem.instance.PlaySound(AudioSystem.instance.buttonSounds[2], 1.0f);
         }
     }
 }

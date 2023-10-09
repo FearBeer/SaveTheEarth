@@ -93,7 +93,7 @@ public class DataManger : MonoBehaviour
 
     public void GiveReward()
     {
-        playerInfo.money += 250;
+        playerInfo.money += playerInfo.reward;
         Save();
     }
 

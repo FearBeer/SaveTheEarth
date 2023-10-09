@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class BeginSlider : MonoBehaviour
 {
-    private GameObject[] slides;
+    [SerializeField] private GameObject[] slides;
     private GameObject backButton;
     private GameObject nextButton;
     public UnityEvent<int> OnClickButton;
@@ -12,7 +12,6 @@ public class BeginSlider : MonoBehaviour
     {
         AudioSystem.instance.ChangeTrack(AudioSystem.instance.sounds[0]);
         AudioSystem.instance.PlayMusic();
-        slides = GameObject.FindGameObjectsWithTag("BeginSlide");
         backButton = GameObject.FindGameObjectWithTag("BackButton");
         nextButton = GameObject.FindGameObjectWithTag("NextButton");
         backButton.SetActive(false);

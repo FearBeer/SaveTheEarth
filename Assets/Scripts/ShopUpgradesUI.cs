@@ -1,6 +1,7 @@
 using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ShopUpgradesUI : MonoBehaviour
@@ -27,6 +28,8 @@ public class ShopUpgradesUI : MonoBehaviour
     private string damageName;
     private string fuelName;
 
+    public UnityEvent<int> onRewardChange;
+
     void Awake()
     {
         if(Language.Instance.currentLanguage == "en")
@@ -48,6 +51,10 @@ public class ShopUpgradesUI : MonoBehaviour
         }
 
         rewardTextValue.text = $"+{DataManger.Instance.playerInfo.reward}";
+        onRewardChange.AddListener(reward =>
+        {
+            rewardTextValue.text = $"+{reward}";
+        });
 
         if(DataManger.Instance.playerInfo.isMaxPlayerHP)
         {
@@ -117,17 +124,17 @@ public class ShopUpgradesUI : MonoBehaviour
     {
         if (DataManger.Instance.playerInfo.fuelCapacity <= 1600)
         {
-            DataManger.Instance.playerInfo.reward = 250;
+            DataManger.Instance.playerInfo.reward = 400;
         }
         else if (DataManger.Instance.playerInfo.fuelCapacity <= 6400)
         {
-            DataManger.Instance.playerInfo.reward = 500;
+            DataManger.Instance.playerInfo.reward = 800;
         }
         else
         {
-            DataManger.Instance.playerInfo.reward = 1000;
+            DataManger.Instance.playerInfo.reward = 2500;
         }
-
+        onRewardChange.Invoke(DataManger.Instance.playerInfo.reward);
         rewardTextValue.text = $"+{DataManger.Instance.playerInfo.reward}";
 
         RewardForVideo(DataManger.Instance.playerInfo.reward);
